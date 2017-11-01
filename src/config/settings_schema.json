@@ -1,7 +1,7 @@
 [
   {
-    "name": "Choose Love",
-    "theme_name": "Choose Love",
+    "name": "theme_info",
+    "theme_name": "ChooseLove",
     "theme_version": "0.11.0",
     "theme_author": "Rui Ramos",
     "theme_documentation_url": "https://shopify.github.io/slate/",
