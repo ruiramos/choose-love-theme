@@ -5,7 +5,7 @@ $color-primary: {{ settings.color_primary }};
 $color-body-text: {{ settings.color_body_text }};
 
 // Backgrounds
-$color-body: #fff;
+$color-body: #f3f2f2;
 
 // Border colors
 $color-border: #f6f6f6;
@@ -18,14 +18,17 @@ $color-error-bg: #000;
 $color-success: #000;
 $color-success-bg: #000;
 
+$color-golden: darken(#B99B14, 1%);
+$color-green-submit: #00CA92;
+
 /*================ Typography Variables ================*/
 $font-weight-normal: 400;
 $font-weight-bold: 700;
 
-$font-stack-header: 'HelveticaNeue', 'Helvetica Neue', Helvetica, Arial, sans-serif;
-$font-weight-header: $font-weight-bold;
+$font-stack-header: 'Fjalla One', 'HelveticaNeue', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+$font-weight-header: $font-weight-normal;
 
-$font-stack-body: 'HelveticaNeue', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+$font-stack-body: 'Karla', 'HelveticaNeue', 'Helvetica Neue', Helvetica, Arial, sans-serif;
 $font-size-base: {{ settings.type_base_size }};
 
 /*============================================================================
@@ -65,8 +68,8 @@ $breakpoints: (
     - Default is no push classes
     - Will not work if `styles/global/grid.scss` is removed
 ==============================================================================*/
-$breakpoint-has-widths: ($small, $medium-up);
-$breakpoint-has-push: ();
+$breakpoint-has-widths: ($small, $medium-up, $large-up);
+$breakpoint-has-push: ($medium-up);
 
 /*================ Sizing Variables ================*/
 $width-site: 1180px;

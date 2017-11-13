@@ -1,0 +1,126 @@
+{%- assign collection = collections[section.settings.collection] -%}
+
+<div class="homepage-product-grid-stage stage-future">
+  <div class="one-whole row-8">
+    <div class="one-half row-12">
+      <div class="one-whole row-5">
+        <!-- adult education kit -->
+        {%- assign product = collection.products[0] -%}
+        {%- assign current_variant = product.selected_or_first_available_variant -%}
+        <a href="{{ shop.url }}{{ product.url }}" class="homepage-product" data-section-type="product" itemscope itemtype="http://schema.org/Product">
+          <meta itemprop="name" content="{{ product.title }}">
+          <meta itemprop="url" content="{{ shop.url }}{{ product.url }}">
+          <meta itemprop="image" content="{{ product.featured_image | img_url: '800x' }}">
+          <meta itemprop="description" content="{{ product.description | strip_html | escape }}">
+
+          <img src="{{ product.featured_image | img_url: '800x' }}" />
+
+          <span class="product-name">{{ product.title }} ({{ current_variant.price | money }})</span>
+        </a>
+      </div>
+      <div class="one-whole row-7">
+        <div class="one-quarter row-12">
+          <div class="one-whole row-5">
+          </div>
+          <div class="one-whole row-7">
+            <!-- phone -->
+            {%- assign product = collection.products[1] -%}
+            {%- assign current_variant = product.selected_or_first_available_variant -%}
+            <a href="{{ shop.url }}{{ product.url }}" class="homepage-product" data-section-type="product" itemscope itemtype="http://schema.org/Product">
+              <meta itemprop="name" content="{{ product.title }}">
+              <meta itemprop="url" content="{{ shop.url }}{{ product.url }}">
+              <meta itemprop="image" content="{{ product.featured_image | img_url: '800x' }}">
+              <meta itemprop="description" content="{{ product.description | strip_html | escape }}">
+
+              <img src="{{ product.featured_image | img_url: '800x' }}" />
+
+              <span class="product-name">{{ product.title }} ({{ current_variant.price | money }})</span>
+            </a>
+          </div>
+        </div>
+        <div class="three-quarters row-12">
+          <!-- backpack -->
+          {%- assign product = collection.products[2] -%}
+          {%- assign current_variant = product.selected_or_first_available_variant -%}
+          <a href="{{ shop.url }}{{ product.url }}" class="homepage-product" data-section-type="product" itemscope itemtype="http://schema.org/Product">
+            <meta itemprop="name" content="{{ product.title }}">
+            <meta itemprop="url" content="{{ shop.url }}{{ product.url }}">
+            <meta itemprop="image" content="{{ product.featured_image | img_url: '800x' }}">
+            <meta itemprop="description" content="{{ product.description | strip_html | escape }}">
+
+            <img src="{{ product.featured_image | img_url: '800x' }}" />
+
+            <span class="product-name">{{ product.title }} ({{ current_variant.price | money }})</span>
+          </a>
+        </div>
+      </div>
+    </div>
+    <div class="one-half row-12">
+      <!-- cooking kit -->
+      {%- assign product = collection.products[3] -%}
+      {%- assign current_variant = product.selected_or_first_available_variant -%}
+      <a href="{{ shop.url }}{{ product.url }}" class="homepage-product" data-section-type="product" itemscope itemtype="http://schema.org/Product">
+        <meta itemprop="name" content="{{ product.title }}">
+        <meta itemprop="url" content="{{ shop.url }}{{ product.url }}">
+        <meta itemprop="image" content="{{ product.featured_image | img_url: '800x' }}">
+        <meta itemprop="description" content="{{ product.description | strip_html | escape }}">
+
+        <img src="{{ product.featured_image | img_url: '800x' }}" />
+
+        <span class="product-name">{{ product.title }} ({{ current_variant.price | money }})</span>
+      </a>
+    </div>
+  </div>
+
+  <div class="one-whole row-4">
+    <!-- education -->
+    {%- assign product = collection.products[4] -%}
+    {%- assign current_variant = product.selected_or_first_available_variant -%}
+    <a href="{{ shop.url }}{{ product.url }}" class="homepage-product" data-section-type="product" itemscope itemtype="http://schema.org/Product">
+      <meta itemprop="name" content="{{ product.title }}">
+      <meta itemprop="url" content="{{ shop.url }}{{ product.url }}">
+      <meta itemprop="image" content="{{ product.featured_image | img_url: '800x' }}">
+      <meta itemprop="description" content="{{ product.description | strip_html | escape }}">
+
+      <img src="{{ product.featured_image | img_url: '800x' }}" />
+
+      <span class="product-name">{{ product.title }} ({{ current_variant.price | money }})</span>
+    </a>
+  </div>
+</div>
+
+{% comment %}
+<div class="homepage-product-grid" data-section-id={{ section.id }}>
+{% for product in collection.products limit: 6 %}
+  <a href="{{ product.url  }}" class="homepage-product">
+    {% if product.featured_image != blank %}
+      {{ product.featured_image.src | img_url: '200x200' | img_tag: product.title }}
+    {% endif %}
+    <div class="homepage-product-info">
+      <p>{{ product.title }}</p>
+      <p>{{ product.price | money }}</p>
+    </div>
+  </a>
+{% endfor %}
+</div>
+{% endcomment %}
+
+{% schema %}
+  {
+    "name": "Homepage Future",
+    "settings": [
+      {
+        "id": "collection",
+        "type": "collection",
+        "label": "Collection"
+      }
+    ],
+    "presets": [
+      {
+        "name": "Homepage Future",
+        "category": "Collection"
+      }
+    ]
+  }
+
+{% endschema %}

@@ -7,6 +7,11 @@
 </style>
 <div data-section-id="{{ section.id }}" data-section-type="header-section">
   <header role="banner">
+    <div class="menu">
+      <a href="#" class="menu-link" data-hook="toggle-menu">
+        <img src={{ "ico-menu.svg "| asset_url}} />
+      </a>
+    </div>
     {% if template.name == 'index' %}
       <h1 itemscope itemtype="http://schema.org/Organization">
     {% else %}
@@ -29,10 +34,13 @@
       </div>
     {% endif %}
 
-    <a href="/cart">
-      {% include 'icon-cart' %}
-      {{ 'layout.cart.title' | t }}
+    <a class="cart-link small--hide" href="/cart">
+      {{ 'layout.cart.title' | t }}:
+      {{ cart.total_price | money}}
       ({{ cart.item_count }} {{ 'layout.cart.items_count' | t: count: cart.item_count }})
+    </a>
+    <a class="cart-link medium-up--hide" href="/cart">
+      {{ 'layout.cart.title' | t }} ({{ cart.item_count }})
     </a>
 
     {% if shop.customer_accounts_enabled %}
@@ -60,6 +68,7 @@
       </ul>
     {% endif %}
 
+    {% comment %}
     <form action="/search" method="get" role="search">
       <label for="Search" class="label-hidden">
         {{ 'general.search.placeholder' | t }}
@@ -74,9 +83,11 @@
         <span class="icon-fallback-text">{{ 'general.search.submit' | t }}</span>
       </button>
     </form>
+    {% endcomment %}
 
   </header>
 
+  {% comment %}
   <nav role="navigation">
     <ul class="site-nav">
       {% for link in linklists[section.settings.main_linklist].links %}
@@ -103,6 +114,7 @@
       {% endfor %}
     </ul>
   </nav>
+  {% endcomment %}
 </div>
 
 {% schema %}

@@ -209,3 +209,17 @@
     @include grid-push-generator('#{$breakpoint}--');
   }
 }
+
+// 12 rows grid
+.row-1 	{height: 8.333333%;}
+.row-2 	{height: 16.666666%;}
+.row-3 	{height: 25%;}
+.row-4 	{height: 33.333333%;}
+.row-5 	{height: 41.666666%;}
+.row-6 	{height: 50%;}
+.row-7 	{height: 58.333333%;}
+.row-8 	{height: 66.666666%;}
+.row-9 	{height: 75%;}
+.row-10 {height: 83.333333%;}
+.row-11 {height: 91.666666%;}
+.row-12 {height: 100%;}

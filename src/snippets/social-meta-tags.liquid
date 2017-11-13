@@ -32,7 +32,8 @@
 {%- elsif template.name == 'password' -%}
   {%- assign og_title = shop.name -%}
   {%- assign og_url = shop.url -%}
-  {%- assign og_description = shop.description | default: shop.name -%}
+  {%- assign og_description = shop.description | append: " Opening soon!" -%}
+  <meta property="og:image" content="http:{{ "choose-love-logo.png" |  asset_url }}">
 {%- endif -%}
 
 <meta property="og:site_name" content="{{ shop.name }}">
@@ -40,6 +41,9 @@
 <meta property="og:title" content="{{ og_title }}">
 <meta property="og:type" content="{{ og_type }}">
 <meta property="og:description" content="{{ og_description }}">
+{%- if template.name == 'index' -%}
+  <meta property="og:image" content="http:{{ "choose-love-logo.png" |  asset_url }}">
+{%- endif -%}
 {%- if template.name == 'product' -%}
   <meta property="og:price:amount" content="{{ product.price | money_without_currency | strip_html }}">
   <meta property="og:price:currency" content="{{ shop.currency }}">

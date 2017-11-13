@@ -1,0 +1,60 @@
+footer {
+  padding: 80px 00px 60px !important;
+  position: relative;
+  background: black;
+  color: white;
+  overflow: auto;
+
+  a {
+    color: white;
+    text-decoration: none;
+  }
+
+  a:hover {
+    color: #CFAA06;
+    text-decoration: underline;
+  }
+
+  ul {
+    margin: 0;
+    padding: 0;
+  }
+
+  ul.footer-nav {
+    list-style: none;
+    li {
+      line-height: 1.4em;
+    }
+  }
+
+  .footer-container {
+    padding: 0 40px;
+  }
+
+  .footer-padding-container {
+    padding: 20px;
+  }
+
+  .hr-logo {
+    width: 50px;
+    margin-top: 10px;
+  }
+
+  .footer-pattern {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    background-repeat: repeat;
+
+  }
+
+  @media (max-width: $grid-large){
+    .footer-pattern {
+      height: 50px;
+      bottom: auto;
+    }
+
+    padding-bottom: 0 !important;
+  }
+}

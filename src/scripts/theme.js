@@ -13,6 +13,7 @@ window.theme = window.theme || {};
 
 /*================ Sections ================*/
 // =require sections/product.js
+// =require sections/homepage.js
 
 /*================ Templates ================*/
 // =require templates/customers-addresses.js

@@ -28,32 +28,14 @@
             "collection": "frontpage"
           }
         },
-        "homepage-arrival": {
-          "type": "homepage-arrival",
-          "settings": {
-            "collection": "frontpage"
-          }
-        },
-        "homepage-shelter": {
-          "type": "homepage-shelter",
-          "settings": {
-            "collection": "frontpage"
-          }
-        },
-        "homepage-future": {
-          "type": "homepage-future",
-          "settings": {
-            "collection": "frontpage"
-          }
-        },
         "featured-product": {
           "type": "featured-product"
         }
       },
       "content_for_index": [
-        "homepage-arrival",
-        "homepage-shelter",
-        "homepage-future"
+        "collection-list",
+        "featured-collection",
+        "featured-product"
       ]
     }
   }

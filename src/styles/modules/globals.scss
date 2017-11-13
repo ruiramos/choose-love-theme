@@ -1,0 +1,111 @@
+a {
+  color: black;
+  text-decoration: none;
+}
+
+a:hover {
+  color: $color-golden;
+}
+
+body {
+  font-family: $font-stack-body;
+  font-weight: $font-weight-normal;
+  font-size: $font-size-base;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: $font-stack-header;
+  font-weight: $font-weight-header;
+}
+
+h1, h2 {
+  text-transform: uppercase;
+}
+
+.splashpage {
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  background: white;
+  opacity: 0;
+  transition: opacity 300ms ease-out;
+  display: none;
+  width: 100%;
+
+  &.in {
+    opacity: 1;
+  }
+
+  .center-content {
+    width: 50%;
+    text-align: center;
+    margin:0px auto;
+    position: relative;
+    top: 50%;
+    margin-top: -200px;
+  }
+}
+
+body.remove-overflow {
+  overflow: hidden;
+}
+
+.inner-page {
+  padding: 40px 0;
+  .inner-page-content {
+    margin: 0px auto;
+    background: white;
+    overflow: auto;
+    padding: 30px;
+  }
+
+  .grey-bg {
+    flex-grow: 1;
+    background: $color-body;
+  }
+
+  .inner-page-section {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .inner-page-section-content {
+    margin: 30px 0;
+    padding: 1px;
+  }
+
+  .inner-page-section-right {
+    padding-right: 30px;
+  }
+
+  .page-title {
+    margin-top: 0;
+    border-bottom: 1px solid #eee;
+    width: 100%;
+    display: block;
+  }
+}
+
+@media (max-width: $grid-medium){
+  .inner-page .inner-page-content {
+    display: block !important;
+  }
+  .inner-page .inner-page-section-right {
+    padding-left: 30px;
+  }
+}
+
+// classes for font size
+.font-bigger {
+  font-size: 1.33em;
+}
+.font-huge {
+  font-size: 1.55em;
+}
+
+.small-titles {
+  text-transform: uppercase;
+  font-size: 0.75em;
+  color: #787979;
+}

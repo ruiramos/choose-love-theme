@@ -1,9 +1,38 @@
 /*================ Site Header ================*/
-.site-logo {
-  display: block;
+header {
+  display: flex;
+  flex-direction: row;
+  line-height: 48px;
+  padding: 0 10px;
+  background: white;
 
-  img {
+  h1,
+  div.h1 {
+    margin: 0;
+    flex-grow: 1;
+
+    .site-logo {
+      display: block;
+      margin: 0px auto;
+
+      img {
+        display: block;
+        width: 100%;
+      }
+    }
+
+  }
+
+  a.cart-link,
+  a.menu-link {
     display: block;
-    width: 100%;
+    min-width: 150px;
+    img { vertical-align: middle; }
+
+    @media (max-width: $grid-medium){
+      min-width: 56px;
+    }
   }
 }
+
+

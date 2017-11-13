@@ -1,0 +1,35 @@
+{%- assign collection = collections[section.settings.collection] -%}
+
+<div class="homepage-product-grid" data-section-id={{ section.id }}>
+{% for product in collection.products limit: 6 %}
+  <a href="{{ product.url  }}" class="homepage-product">
+    {% if product.featured_image != blank %}
+      {{ product.featured_image.src | img_url: '200x200' | img_tag: product.title }}
+    {% endif %}
+    <div class="homepage-product-info">
+      <p>{{ product.title }}</p>
+      <p>{{ product.price | money }}</p>
+    </div>
+  </a>
+{% endfor %}
+</div>
+
+{% schema %}
+  {
+    "name": "Homepage Collection",
+    "settings": [
+      {
+        "id": "collection",
+        "type": "collection",
+        "label": "Collection"
+      }
+    ],
+    "presets": [
+      {
+        "name": "Homepage Collection",
+        "category": "Collection"
+      }
+    ]
+  }
+
+{% endschema %}

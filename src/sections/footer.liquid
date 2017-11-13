@@ -1,4 +1,5 @@
-<footer>
+<footer class="grid">
+  <div class="footer-container">
 
   {%- assign social_accounts = 'Facebook, Twitter, Pinterest, Instagram, Snapchat, Tumblr, YouTube, Vimeo,' | split: ', ' -%}
   <ul>
@@ -39,16 +40,37 @@
   {% endif %}
 
   {%- assign footer_linklist = section.settings.footer_linklist -%}
-  {% if linklists[footer_linklist].links.size > 0 %}
-    <ul>
-      {% for link in linklists[footer_linklist].links %}
-        <li><a href="{{ link.url }}">{{ link.title }}</a></li>
-      {% endfor %}
-    </ul>
-  {% endif %}
+  {%- assign footer_linklist2 = section.settings.footer_linklist2 -%}
 
-  <div>
-    <small>{{ 'layout.footer.copyright' | t }} &copy; {{ 'now' | date: "%Y" }}, {{ shop.name | link_to: '/' }}. {{ powered_by_link }}</small>
+  <div class="footer-menu-container grid__item large-up--one-fifth one-half">
+    {% if linklists[footer_linklist].links.size > 0 %}
+      <ul class="footer-nav footer-padding-container">
+        {% for link in linklists[footer_linklist].links %}
+          <li><a href="{{ link.url }}">{{ link.title }}</a></li>
+        {% endfor %}
+      </ul>
+    {% endif %}
+  </div>
+
+  <div class="footer-menu-container grid__item large-up--one-fifth one-half">
+    {% if linklists[footer_linklist2].links.size > 0 %}
+      <ul class="footer-nav footer-padding-container">
+        {% for link in linklists[footer_linklist2].links %}
+          <li><a href="{{ link.url }}">{{ link.title }}</a></li>
+        {% endfor %}
+      </ul>
+    {% endif %}
+  </div>
+
+  <div class="footer-menu-container grid__item large-up--one-fifth">
+    <div class="footer-padding-container">
+      <small>&copy; {{ 'layout.footer.copyright' | t }} {{ 'now' | date: "%Y" }}</small>
+      <br/>
+      <small>All rights reserved.</small>
+      <div><a href="https://helprefugees.org" target="_blank"><img src="{{ "hr.png" | asset_url }}" class="hr-logo" /></a></div>
+    </div>
+  </div>
+
   </div>
 </footer>
 
@@ -60,6 +82,12 @@
         "type": "link_list",
         "id": "footer_linklist",
         "label": "First menu",
+        "default": "footer"
+      },
+      {
+        "type": "link_list",
+        "id": "footer_linklist2",
+        "label": "Second menu",
         "default": "footer"
       },
       {
