@@ -2,7 +2,7 @@
 header {
   display: flex;
   flex-direction: row;
-  line-height: 48px;
+  line-height: 50px;
   padding: 0 10px;
   background: white;
 
@@ -33,6 +33,48 @@ header {
       min-width: 56px;
     }
   }
+
+  .site-logo {
+    padding: 4px;
+    img {
+      height: 42px;
+    }
+  }
 }
 
+nav.main-nav {
+  position: fixed;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  width:25%;
+  transform: translateX(-100%);
+  background: black;
+  color: white;
+  z-index: 1000;
+  will-change: transform;
+  transition: transform 250ms ease-out;
+
+  .site-nav {
+    list-style: none;
+    line-height: 2em;
+    font-size: 2em;
+  }
+
+  .main-nav-header {
+    line-height: 50px;
+    background: #212121;
+
+    a {
+      display: block;
+      padding-left: 8px;
+
+      img {
+        vertical-align: middle;
+      }
+    }
+  }
+
+
+}
 

@@ -15,6 +15,7 @@
     padding: 20px;
   }
 
+  body.products-faded &,
   &.product-hovered {
     a.homepage-product:not(:hover) {
       opacity: 0.5;

@@ -8,7 +8,7 @@
 <div data-section-id="{{ section.id }}" data-section-type="header-section">
   <header role="banner">
     <div class="menu">
-      <a href="#" class="menu-link" data-hook="toggle-menu">
+      <a href="#" class="menu-link" data-hook="open-main-nav">
         <img src={{ "ico-menu.svg "| asset_url}} />
       </a>
     </div>
@@ -17,7 +17,7 @@
     {% else %}
       <div class="h1" itemscope itemtype="http://schema.org/Organization">
     {% endif %}
-        <a href="/" itemprop="url" class="site-logo{% if section.settings.logo != blank %} site-header__logo-image{% endif %}">
+        <a href="/" itemprop="url" class="site-logo{% if section.settings.logo != blank %} site-header__logo-image{% endif %}" >
           {% if section.settings.logo != blank %}
             {% capture image_size %}{{ section.settings.logo_max_width }}x{% endcapture %}
             <img src="{{ section.settings.logo | img_url: image_size }}"
@@ -87,8 +87,12 @@
 
   </header>
 
-  {% comment %}
-  <nav role="navigation">
+  <nav role="navigation" class="main-nav light-links">
+    <div class="main-nav-header">
+      <a href="#" data-hook="close-main-nav">
+        <img src={{ "ico-close.svg "| asset_url}} />
+      </a>
+    </div>
     <ul class="site-nav">
       {% for link in linklists[section.settings.main_linklist].links %}
         {%- assign child_list_handle = link.title | handleize -%}
@@ -114,7 +118,6 @@
       {% endfor %}
     </ul>
   </nav>
-  {% endcomment %}
 </div>
 
 {% schema %}
