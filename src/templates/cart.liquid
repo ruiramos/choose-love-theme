@@ -116,6 +116,7 @@
           {% endif %}
                 </div>
       </div>
+      <a style=" float: left; margin-top: 10px;" href="/#products" class="btn btn-secondary btn-huge">Continue shopping</a>
       <div class="desktop-checkout-btns">
         <input type="submit" name="update" class="btn btn-secondary btn-huge" value="{{ 'cart.general.update' | t }}" >
         <input type="submit" name="checkout" class="btn btn-huge btn-submit" value="{{ 'cart.general.checkout' | t }}" >
@@ -128,13 +129,13 @@
 
         <hr>
 
-        <p>If you're a UK taxpayer you can boost your donation by 25p for every £1 you donate. Gift Aid is reclaimed by the charity from the tax you pay for the current tax year.</p>
-        <p>Your address is needed to identify you as a current UK taxpayer.</p>
-
           <input type="hidden" name="attributes[Gift Aid]" value="No">
           <label>
             <input type="checkbox" name="attributes[Gift Aid]" value="Yes"{% if cart.attributes["Gift Aid"] == "Yes" %} checked{% endif %}>
             Gift Aid my donation</label>
+
+        <p>If you're a UK taxpayer you can boost your donation by 25p for every £1 you donate. Gift Aid is reclaimed by the charity from the tax you pay for the current tax year.</p>
+        <p>Your address is needed to identify you as a current UK taxpayer.</p>
 
           <p class="small-titles" style="margin-bottom: 0">Note:</p>
           <p style="margin-top: 0">The amount of Income Tax and/or Capital Gains Tax payed in the current tax year must be greater than the amount of Gift Aid claimed on all your donations.</p>

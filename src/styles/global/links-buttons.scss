@@ -1,5 +1,6 @@
 /*================ Links & Buttons ================*/
 .btn {
+  position: relative;
   @include prefix('user-select', 'none', moz ms webkit spec);
   @include prefix(appearance, none, webkit moz spec);
   display: inline-block;
@@ -8,6 +9,7 @@
   text-align: center;
   vertical-align: middle;
   white-space: nowrap;
+  border-radius: 0;
 
   font-family: $font-stack-header;
   font-weight: $font-weight-normal;
@@ -16,13 +18,18 @@
   background: black;
   color: white;
   font-size: 0.75em;
-  text-transform: uppercase;
   border: 1px solid black;
+  z-index: 100;
 
   transition: background 200ms ease-out;
 
+  &:active {
+    color: white;
+  }
+
   &.btn-huge {
     padding: 16px 60px;
+
   }
 
   &.btn-secondary {
@@ -37,8 +44,22 @@
   }
 
   &.btn-submit:hover {
-    background: $color-green-submit;
-    border-color: darken($color-green-submit, 2.5%);
+    color: white;
+    background: $color-golden;
+    border-color: darken($color-golden, 2.5%);
   }
+
 }
 
+a.btn:hover { color: white; }
+a.btn-secondary:hover { color: black; }
+
+.btn-white {
+  background: transparent;
+  border-color: white;
+  color: white !important;
+  &:hover {
+    background: white;
+    color: black !important;
+  }
+}

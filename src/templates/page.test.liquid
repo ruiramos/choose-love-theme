@@ -1,8 +1,16 @@
-{%- assign collection = collections[section.settings.collection] -%}
+{%- assign collection = collections.homepage-all -%}
+
 <div class="homepage-product-grid-masonry masonry-grid" data-section-id={{ section.id }}>
   <div class="homepage-product-sizer"></div>
   {% for product in collection.products %}
-    <a href="{{ product.url }}" class="homepage-product" data-section-type="product" itemscope itemtype="http://schema.org/Product">
+    {%- assign extra_classes = '' -%}
+    {% if product.handle == 'medical-kit' or product.handle == 'phone-and-credit' or product.handle == 'baby-grow' or product.handle == 'hot-food' or product.handle == 'nappies' or product.handle == 'emergency-blanket' or product.handle == 'childs-boots' %}
+      {%- assign extra_classes = 'product-smaller' -%}
+    {% endif %}
+    {% if product.handle == 'school-bag-supplies' or product.handle == 'dictionary' %}
+      {%- assign extra_classes = 'product-larger' -%}
+    {% endif %}
+    <a href="{{ product.url }}" class="homepage-product {{ extra_classes }}" data-section-type="product" itemscope itemtype="http://schema.org/Product">
       {%- assign current_variant = product.selected_or_first_available_variant -%}
       <meta itemprop="name" content="{{ product.title }}">
       <meta itemprop="url" content="{{ shop.url }}{{ product.url }}">
@@ -19,22 +27,3 @@
   {% endfor %}
 </div>
 
-{% schema %}
-  {
-    "name": "Homepage Collection",
-    "settings": [
-      {
-        "id": "collection",
-        "type": "collection",
-        "label": "Collection"
-      }
-    ],
-    "presets": [
-      {
-        "name": "Homepage Collection",
-        "category": "Collection"
-      }
-    ]
-  }
-
-{% endschema %}

@@ -1,9 +1,11 @@
 footer {
-  padding: 80px 00px 60px !important;
+  padding: 80px 0 60px !important;
   position: relative;
   background: black;
   color: white;
-  overflow: auto;
+  overflow: hidden;
+  background-size: 2732px;
+  background-position: 0 0;
 
   ul {
     margin: 0;
@@ -17,17 +19,16 @@ footer {
     }
   }
 
+  .footer-menu-container {
+    padding-left: 0;
+  }
+
   .footer-container {
     padding: 0 40px;
   }
 
-  .footer-padding-container {
-    padding: 20px;
-  }
-
   .hr-logo {
-    width: 50px;
-    margin-top: 10px;
+    height: 45px;
   }
 
   .footer-pattern {
@@ -47,4 +48,11 @@ footer {
 
     padding-bottom: 0 !important;
   }
+
+  .footer-logos {
+    img {
+      margin: 0 8px;
+    }
+  }
+
 }

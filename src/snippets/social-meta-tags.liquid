@@ -1,7 +1,8 @@
 {%- assign og_title = page_title -%}
 {%- assign og_url = canonical_url -%}
 {%- assign og_type = 'website' -%}
-{%- assign og_description = page_description | default: shop.description | default: shop.name -%}
+{%- assign og_description = 'Choose Love - the world’s first store that sells real products for refugees. @HelpRefugeesUK #ChooseLove' -%}
+{%- assign og_description_tw = 'Choose Love - the world’s first store that sells real products for refugees. @HelpRefugees #ChooseLove' -%}
 
 {% comment %}
   Template specific overides
@@ -10,14 +11,10 @@
   {%- assign og_title = product.title | strip_html -%}
   {%- assign og_type = 'product' -%}
   {%- capture og_image_tags -%}
-    {%- for image in product.images limit: 3 -%}
-      <meta property="og:image" content="http:{{ image.src | product_img_url: '1024x1024' }}">
-    {%- endfor -%}
+      <meta property="og:image" content="http:{{ product.images[0].src | product_img_url: '900x' }}">
   {%- endcapture -%}
   {%- capture og_image_secure_url_tags -%}
-    {%- for image in product.images limit: 3 -%}
-      <meta property="og:image:secure_url" content="https:{{ image.src | product_img_url: '1024x1024' }}">
-    {%- endfor -%}
+      <meta property="og:image:secure_url" content="https:{{ product.images[0].src | product_img_url: '900x' }}">
   {%- endcapture -%}
 
 {%- elsif template.name == 'article' -%}
@@ -42,7 +39,7 @@
 <meta property="og:type" content="{{ og_type }}">
 <meta property="og:description" content="{{ og_description }}">
 {%- if template.name == 'index' -%}
-  <meta property="og:image" content="http:{{ "choose-love-logo.png" |  asset_url }}">
+  <meta property="og:image" content="http:{{ "chooselove-homepage9.jpg" |  asset_url }}">
 {%- endif -%}
 {%- if template.name == 'product' -%}
   <meta property="og:price:amount" content="{{ product.price | money_without_currency | strip_html }}">
@@ -54,4 +51,4 @@
 <meta name="twitter:site" content="{{ settings.social_twitter_link | split: 'twitter.com/' | last | prepend: '@' }}">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="{{ og_title }}">
-<meta name="twitter:description" content="{{ og_description }}">
+<meta name="twitter:description" content="{{ og_description_tw }}">

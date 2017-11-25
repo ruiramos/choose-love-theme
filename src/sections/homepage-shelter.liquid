@@ -2,9 +2,10 @@
 
 <div class="homepage-product-grid-stage stage-camp">
   <div class="one-whole row-2">
+    <!-- tent -->
     {%- assign product = collection.products[0] -%}
     {%- assign current_variant = product.selected_or_first_available_variant -%}
-    <a href="{{ shop.url }}{{ product.url }}" class="homepage-product" data-section-type="product" itemscope itemtype="http://schema.org/Product">
+    <a href="{{ product.url }}" class="homepage-product" data-section-type="product" itemscope itemtype="http://schema.org/Product">
       <meta itemprop="name" content="{{ product.title }}">
       <meta itemprop="url" content="{{ shop.url }}{{ product.url }}">
       <meta itemprop="image" content="{{ product.featured_image | img_url: '800x' }}">
@@ -12,14 +13,18 @@
 
       <img src="{{ product.featured_image | img_url: '800x' }}" />
 
-      <span class="product-name">{{ product.title }} ({{ current_variant.price | money }})</span>
+      <span class="product-info">
+        <span class="product-name">{{ product.title }}</span>
+        <span class="product-price">{{ current_variant.price | money }}</span>
+      </span>
     </a>
   </div>
   <div class="one-whole row-2">
     <div class="one-third row-12">
+    <!-- nappies -->
       {%- assign product = collection.products[1] -%}
       {%- assign current_variant = product.selected_or_first_available_variant -%}
-      <a href="{{ shop.url }}{{ product.url }}" class="homepage-product" data-section-type="product" itemscope itemtype="http://schema.org/Product">
+      <a href="{{ product.url }}" class="homepage-product" data-section-type="product" itemscope itemtype="http://schema.org/Product">
         <meta itemprop="name" content="{{ product.title }}">
         <meta itemprop="url" content="{{ shop.url }}{{ product.url }}">
         <meta itemprop="image" content="{{ product.featured_image | img_url: '800x' }}">
@@ -27,13 +32,17 @@
 
         <img src="{{ product.featured_image | img_url: '800x' }}" />
 
-        <span class="product-name">{{ product.title }} ({{ current_variant.price | money }})</span>
+      <span class="product-info">
+        <span class="product-name">{{ product.title }}</span>
+        <span class="product-price">{{ current_variant.price | money }}</span>
+      </span>
       </a>
     </div>
     <div class="two-thirds row-12">
+    <!-- sleeping bag -->
       {%- assign product = collection.products[2] -%}
       {%- assign current_variant = product.selected_or_first_available_variant -%}
-      <a href="{{ shop.url }}{{ product.url }}" class="homepage-product" data-section-type="product" itemscope itemtype="http://schema.org/Product">
+      <a href="{{ product.url }}" class="homepage-product" data-section-type="product" itemscope itemtype="http://schema.org/Product">
         <meta itemprop="name" content="{{ product.title }}">
         <meta itemprop="url" content="{{ shop.url }}{{ product.url }}">
         <meta itemprop="image" content="{{ product.featured_image | img_url: '800x' }}">
@@ -41,29 +50,19 @@
 
         <img src="{{ product.featured_image | img_url: '800x' }}" />
 
-        <span class="product-name">{{ product.title }} ({{ current_variant.price | money }})</span>
+      <span class="product-info">
+        <span class="product-name">{{ product.title }}</span>
+        <span class="product-price">{{ current_variant.price | money }}</span>
+      </span>
       </a>
     </div>
   </div>
   <div class="one-whole row-5">
-    {%- assign product = collection.products[3] -%}
-    {%- assign current_variant = product.selected_or_first_available_variant -%}
-    <a href="{{ shop.url }}{{ product.url }}" class="homepage-product" data-section-type="product" itemscope itemtype="http://schema.org/Product">
-      <meta itemprop="name" content="{{ product.title }}">
-      <meta itemprop="url" content="{{ shop.url }}{{ product.url }}">
-      <meta itemprop="image" content="{{ product.featured_image | img_url: '800x' }}">
-      <meta itemprop="description" content="{{ product.description | strip_html | escape }}">
-
-      <img src="{{ product.featured_image | img_url: '800x' }}" />
-
-      <span class="product-name">{{ product.title }} ({{ current_variant.price | money }})</span>
-    </a>
-  </div>
-  <div class="one-whole row-3">
-    <div class="one-half row-12">
-      {%- assign product = collection.products[4] -%}
+    <div class="one-whole row-6" data-group="hygiene">
+    <!-- hygiene 1 -->
+      {%- assign product = collection.products[3] -%}
       {%- assign current_variant = product.selected_or_first_available_variant -%}
-      <a href="{{ shop.url }}{{ product.url }}" class="homepage-product" data-section-type="product" itemscope itemtype="http://schema.org/Product">
+      <a href="{{ product.url }}" class="homepage-product" data-section-type="product" itemscope itemtype="http://schema.org/Product">
         <meta itemprop="name" content="{{ product.title }}">
         <meta itemprop="url" content="{{ shop.url }}{{ product.url }}">
         <meta itemprop="image" content="{{ product.featured_image | img_url: '800x' }}">
@@ -71,13 +70,57 @@
 
         <img src="{{ product.featured_image | img_url: '800x' }}" />
 
-        <span class="product-name">{{ product.title }} ({{ current_variant.price | money }})</span>
+        <span class="product-info">
+          <span class="product-name">{{ product.title }}</span>
+          <span class="product-price">{{ current_variant.price | money }}</span>
+        </span>
       </a>
     </div>
-    <div class="one-half row-12">
-      {%- assign product = collection.products[5] -%}
+    <div class="one-whole row-6">
+      <div class="one-half row-12" data-group="hygiene">
+    <!-- hygiene 2 -->
+        {%- assign product = collection.products[3] -%}
+        {%- assign current_variant = product.selected_or_first_available_variant -%}
+        <a href="{{ product.url }}" class="homepage-product" data-section-type="product" itemscope itemtype="http://schema.org/Product">
+          <meta itemprop="name" content="{{ product.title }}">
+          <meta itemprop="url" content="{{ shop.url }}{{ product.url }}">
+          <meta itemprop="image" content="{{ product.featured_image | img_url: '800x' }}">
+          <meta itemprop="description" content="{{ product.description | strip_html | escape }}">
+
+          <img src="{{ product.images[2] | img_url: '800x' }}" />
+
+      <span class="product-info">
+        <span class="product-name">{{ product.title }}</span>
+        <span class="product-price">{{ current_variant.price | money }}</span>
+      </span>
+        </a>
+      </div>
+      <div class="one-half row-12">
+    <!-- support -->
+        {%- assign product = collection.products[6] -%}
+        {%- assign current_variant = product.selected_or_first_available_variant -%}
+        <a href="{{ product.url }}" class="homepage-product" data-section-type="product" itemscope itemtype="http://schema.org/Product">
+          <meta itemprop="name" content="{{ product.title }}">
+          <meta itemprop="url" content="{{ shop.url }}{{ product.url }}">
+          <meta itemprop="image" content="{{ product.featured_image | img_url: '800x' }}">
+          <meta itemprop="description" content="{{ product.description | strip_html | escape }}">
+
+          <img src="{{ product.featured_image | img_url: '800x' }}" />
+
+      <span class="product-info">
+        <span class="product-name">{{ product.title }}</span>
+        <span class="product-price">{{ current_variant.price | money }}</span>
+      </span>
+        </a>
+      </div>
+    </div>
+  </div>
+  <div class="one-whole row-3">
+    <div class="seven-twelfths row-12">
+    <!-- food -->
+      {%- assign product = collection.products[4] -%}
       {%- assign current_variant = product.selected_or_first_available_variant -%}
-      <a href="{{ shop.url }}{{ product.url }}" class="homepage-product" data-section-type="product" itemscope itemtype="http://schema.org/Product">
+      <a href="{{ product.url }}" class="homepage-product" data-section-type="product" itemscope itemtype="http://schema.org/Product">
         <meta itemprop="name" content="{{ product.title }}">
         <meta itemprop="url" content="{{ shop.url }}{{ product.url }}">
         <meta itemprop="image" content="{{ product.featured_image | img_url: '800x' }}">
@@ -85,7 +128,29 @@
 
         <img src="{{ product.featured_image | img_url: '800x' }}" />
 
-        <span class="product-name">{{ product.title }} ({{ current_variant.price | money }})</span>
+      <span class="product-info">
+        <span class="product-name">{{ product.title }}</span>
+        <span class="product-price">{{ current_variant.price | money }}</span>
+      </span>
+        </a>
+      </a>
+    </div>
+    <div class="five-twelfths row-12">
+    <!-- boots -->
+      {%- assign product = collection.products[5] -%}
+      {%- assign current_variant = product.selected_or_first_available_variant -%}
+      <a href="{{ product.url }}" class="homepage-product" data-section-type="product" itemscope itemtype="http://schema.org/Product">
+        <meta itemprop="name" content="{{ product.title }}">
+        <meta itemprop="url" content="{{ shop.url }}{{ product.url }}">
+        <meta itemprop="image" content="{{ product.featured_image | img_url: '800x' }}">
+        <meta itemprop="description" content="{{ product.description | strip_html | escape }}">
+
+        <img src="{{ product.featured_image | img_url: '800x' }}" />
+
+      <span class="product-info">
+        <span class="product-name">{{ product.title }}</span>
+        <span class="product-price">{{ current_variant.price | money }}</span>
+      </span>
       </a>
     </div>
   </div>

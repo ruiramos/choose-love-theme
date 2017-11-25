@@ -1,6 +1,7 @@
 {
   "general": {
-    "tagline": "The world's first store that sells real products for refugees.",
+    "tagline": "The world's first store that sells real products for refugees",
+    "tagline_html": "The world's first store that <br>sells real products for refugees.",
     "accessibility": {
       "skip_to_content": "Skip to content"
     },
@@ -10,7 +11,7 @@
     },
     "404": {
       "title": "404 Page Not Found",
-      "subtext_html": "The page you requested does not exist. Click <a href=\"/collections/all\">here</a> to continue shopping."
+      "subtext_html": "The page you requested does not exist. Click <a href=\"/\">here</a> to continue shopping."
     },
     "password_page": {
       "opening_soon": "Opening Soon!",
@@ -32,6 +33,7 @@
       "share_on_facebook": "Share",
       "share_on_twitter": "Tweet",
       "share_on_pinterest": "Pin it",
+      "share_product_text": "This Black Friday, choose something that actually matters. Choose Love, the world’s first store that sells products for refugees.",
       "alt_text": {
         "share_on_facebook": "Share on Facebook",
         "share_on_twitter": "Tweet on Twitter",
@@ -81,7 +83,7 @@
       "checkout": "Check Out",
       "empty": "Your cart is currently empty.",
       "cookies_required": "Enable cookies to use the shopping cart",
-      "continue_browsing_html": "Continue browsing <a href=\"/collections/all\">here</a>.",
+      "continue_browsing_html": "Continue browsing <a href=\"/\">here</a>.",
       "item_quantity": "Item quantity",
       "savings": "You're saving"
     },
@@ -105,9 +107,9 @@
       "name": "Name",
       "email": "Email",
       "phone": "Phone Number",
-      "message": "Message",
+      "message": "Your message",
       "send": "Send",
-      "post_success": "Thanks for contacting us. We'll get back to you as soon as possible."
+      "post_success": "Thanks for getting in touch."
     }
   },
   "customer": {

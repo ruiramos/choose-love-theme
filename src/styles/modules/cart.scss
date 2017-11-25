@@ -58,7 +58,6 @@
   }
   .mobile-checkout-btns {
     display: none;
-    margin-right: 10px;
   }
 
   .desktop-checkout-btns,
@@ -108,6 +107,12 @@
     }
     .mobile-checkout-btns {
       display: block;
+      text-align: right;
+      margin: 4px;
+
+      input.btn.btn-huge {
+        padding: 16px 45px;
+      }
     }
   }
 }

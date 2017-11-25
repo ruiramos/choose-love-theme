@@ -1,10 +1,34 @@
-<div class="homepage-product-grid ">
-  {{ content_for_index }}
+<div class="homepage-container">
+  <div class="homepage-header" style="background-image: url('{{ 'homepage-welcome4.jpg' | asset_url }}')">
+    <div class="homepage-header-container">
+      <div class="homepage-header-left scroll-reveal">
+        <img src="{{ "chooselove-white.png" | asset_url }}" class="homepage-header-container-logo" />
+      </div>
+      <div class="homepage-header-right scroll-reveal">
+        <h1>{{ 'general.tagline' | t }}</h1>
+        <h3>Every single purchase you make goes towards a similar item for a refugee, delivered via one of the 80+ projects Help Refugees work with across the world.</h3>
+        <div><a class="btn btn-white" href="#products" data-hook="store-animated-scroll">Shop now</a></div>
+      </div>
+    </div>
+  </div>
+  {% comment %}
+  <div class="homepage-counter">
+    <a href="#products" data-hook="store-animated-scroll"><h1>
+      Shop now
+      <svg style="width:24px;height:24px" viewBox="0 0 24 24">
+        <path fill="#ffffff" d="M7.41,8.58L12,13.17L16.59,8.58L18,10L12,16L6,10L7.41,8.58Z" />
+      </svg>
+    </h1></a>
+    <!--  <h3>34,343 have chosen love so far</h3> -->
+  </div>
+  {% endcomment %}
+  <div id="products" class="homepage-product-grid" style="background-image: url('{{ 'concrete-dark.jpg' | asset_url }}')">
+    {{ content_for_index }}
+  </div>
+  <div class="homepage-buy-store">
+    <h3>
+      <a href="/products/buy-the-store" data-hook="buy-store">Buy the store</a>
+    </h3>
+  </div>
 </div>
 
-{% comment %}
-<div class="homepage-product-grid ">
-
-
-</div>
-{% endcomment %}

@@ -1,0 +1,25 @@
+.contact-us {
+  label {
+    display: none;
+  }
+
+  textarea,
+  input:not([type=submit]) {
+    font-size: 0.75em;
+    padding: 10px;
+    min-width: 250px;
+  }
+
+  div.form-field {
+    margin-bottom: 10px;
+  }
+
+  textarea {
+    width: 100%;
+  }
+
+  .form-success {
+    color: $color-golden;
+  }
+
+}

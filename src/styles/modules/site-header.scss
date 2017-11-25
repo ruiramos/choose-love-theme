@@ -3,7 +3,7 @@ header {
   display: flex;
   flex-direction: row;
   line-height: 50px;
-  padding: 0 10px;
+  padding: 2px 15px;
   background: white;
 
   h1,
@@ -14,10 +14,10 @@ header {
     .site-logo {
       display: block;
       margin: 0px auto;
+      text-align: center;
 
       img {
         display: block;
-        width: 100%;
       }
     }
 
@@ -32,14 +32,9 @@ header {
     @media (max-width: $grid-medium){
       min-width: 56px;
     }
+
   }
 
-  .site-logo {
-    padding: 4px;
-    img {
-      height: 42px;
-    }
-  }
 }
 
 nav.main-nav {
@@ -47,9 +42,9 @@ nav.main-nav {
   left: 0;
   top: 0;
   bottom: 0;
-  width:25%;
+  width: 300px;
   transform: translateX(-100%);
-  background: black;
+  background: #1a1a1a;
   color: white;
   z-index: 1000;
   will-change: transform;
@@ -58,11 +53,12 @@ nav.main-nav {
   .site-nav {
     list-style: none;
     line-height: 2em;
-    font-size: 2em;
+    font-size: 1.5em;
+    padding-left: 20px;
   }
 
   .main-nav-header {
-    line-height: 50px;
+    line-height: 55px;
     background: #212121;
 
     a {
