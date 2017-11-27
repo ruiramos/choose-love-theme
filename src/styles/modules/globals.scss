@@ -10,10 +10,6 @@ body {
   font-family: $font-stack-body;
   font-weight: $font-weight-normal;
   font-size: $font-size-base;
-
-  transition: transform 250ms ease-out;
-  transform: translateX(0);
-  will-change: transform;
 }
 
 body.menu-in {
