@@ -10,6 +10,20 @@ body {
   font-family: $font-stack-body;
   font-weight: $font-weight-normal;
   font-size: $font-size-base;
+  max-width: $width-site;
+  min-height: 100vh;
+  margin: 0 auto;
+  display: flex;
+  flex-flow: column nowrap;
+}
+
+main {
+  flex: 2 0 auto;
+}
+
+#shopify-section-footer {
+  flex: 0 0 auto;
+  overflow: hidden;
 }
 
 body.menu-in {
