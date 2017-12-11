@@ -77,6 +77,67 @@
   }
 }
 
+.vodafone-cta {
+  background-size: 2732px;
+  background-position: 0 5%;
+}
+
+.vodafone-cta__container {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: nowrap;
+  justify-content: center;
+  align-items: center;
+  margin: 0 auto;
+  padding: 20px;
+
+  @media(min-width: $grid-medium) {
+    flex-direction: row;
+    justify-content: space-between;
+  }
+}
+
+.vodafone-cta__logo,
+.vodafone-cta__copy,
+.vodafone-cta__link {
+  flex: 0 1 auto;
+}
+
+.vodafone-cta__logo {
+  width: 120px;
+  height: auto;
+}
+
+.vodafone-cta__copy {
+  max-width: 680px;
+  color: #fff;
+  text-align: center;
+
+  @media(min-width: $grid-medium) {
+    margin: 0 20px;
+    text-align: left;
+  }
+}
+
+.vodafone-cta__link {
+  padding: 10px;
+  border: 1px solid #fff;
+  background-color: transparent;
+  color: #fff;
+  text-transform: uppercase;
+  text-decoration: none;
+  text-align: center;
+  font-family: $font-stack-header;
+  transition: background-color .2s linear, border-color .2s linear;
+
+  &:hover {
+    border-color: #a0947a;
+    background-color: #a0947a;
+    color: #fff;
+  }
+}
+
+
 .homepage-counter {
   padding: 1.75em 0;
   background: #1a1a1a;
