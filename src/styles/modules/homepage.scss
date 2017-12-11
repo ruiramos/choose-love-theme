@@ -1,11 +1,10 @@
 .homepage-header {
   background-size: cover;
   background-position: 50% 44%;
-  min-height: 84.5vh;
+  height: 70vh;
   overflow: hidden;
 
   h1, h3 {
-    text-align: left;
     color: white;
   }
 
@@ -17,22 +16,23 @@
 
   @media (max-width: $grid-medium){
     h1 {
-      font-size: 1.45em;
+      font-size: 1.4em;
     }
   }
 
 
   .homepage-header-container {
     width: 75%;
+    height: inherit;
     margin: 0 auto;
     padding: 4em 0;
     display: flex;
     flex-direction: row;
     justify-content: center;
+    align-items: center;
     @media (max-width: $grid-medium){
-      display: block;
-      padding: 1.5em 0 5em;
       width: 90%;
+      flex-direction: column;
     }
   }
 
@@ -49,19 +49,18 @@
 
   .homepage-header-left,
   .homepage-header-right {
-    width: 50%;
+    flex: 1 1 50%;
     @media (max-width: $grid-medium){
-      width: 100% !important;
-      float: none;
+      flex: 1 1 100%;
     }
   }
 
   .homepage-header-right {
-    width: 45%;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
     max-width: 500px;
+    text-align: left;
+    @media (max-width: $grid-medium){
+      text-align: center;
+    }
   }
 
   .homepage-subheader-container {
