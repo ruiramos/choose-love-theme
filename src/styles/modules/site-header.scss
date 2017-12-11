@@ -1,4 +1,16 @@
 /*================ Site Header ================*/
+
+#shopify-section-header {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 1001;
+}
+
+#MainContent {
+  margin-top: 54px;
+}
+
 header {
   display: flex;
   flex-direction: row;
@@ -39,16 +51,19 @@ header {
 
 nav.main-nav {
   position: fixed;
-  left: 0;
+  left: -300px;
   top: 0;
   bottom: 0;
   width: 300px;
-  transform: translateX(-100%);
   background: #1a1a1a;
   color: white;
-  z-index: 1000;
-  will-change: transform;
-  transition: transform 250ms ease-out;
+  z-index: 1002;
+  will-change: left;
+  transition: left 250ms ease-out;
+
+  &.menu-in {
+    left: 0;
+  }
 
   .site-nav {
     list-style: none;

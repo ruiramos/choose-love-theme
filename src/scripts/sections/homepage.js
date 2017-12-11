@@ -26,12 +26,12 @@ $(document).ready(function() {
   // Main menu toggle
   $('[data-hook=close-main-nav]').click((e) => {
     e.preventDefault();
-    $('body').removeClass('menu-in');
+    $('nav.main-nav').removeClass('menu-in');
   });
 
   $('[data-hook=open-main-nav]').click((e) => {
     e.preventDefault();
-    $('body').addClass('menu-in');
+    $('nav.main-nav').addClass('menu-in');
   });
 
   // Main menu click
