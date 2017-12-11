@@ -15,8 +15,10 @@ header {
   display: flex;
   flex-direction: row;
   line-height: 50px;
-  padding: 2px 15px;
+  margin: 0 auto;
+  padding: 2px 20px;
   background: white;
+  margin: 0 auto;
 
   h1,
   div.h1 {
@@ -32,22 +34,24 @@ header {
         display: block;
       }
     }
-
   }
 
   a.cart-link,
   a.menu-link {
     display: block;
     min-width: 150px;
-    img { vertical-align: middle; }
+    text-decoration: none;
+
+    img {
+      vertical-align: middle;
+    }
 
     @media (max-width: $grid-medium){
       min-width: 56px;
     }
-
   }
-
 }
+
 
 nav.main-nav {
   position: fixed;
