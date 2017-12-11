@@ -179,14 +179,13 @@
 }
 
 .homepage-product-grid {
-  padding: 40px 100px;
-  background: none;
+  padding: 25px;
   overflow: auto;
-
   display: flex;
   flex-direction: row;
-  justify-content: center;
+  justify-content: flex-start;
   flex-wrap: wrap;
+  background-color: #FFF;
 
   @media (max-width: $grid-medium){
     display: block;

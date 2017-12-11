@@ -3,6 +3,7 @@
 #shopify-section-header {
   position: fixed;
   top: 0;
+  max-width: $width-site;
   width: 100%;
   z-index: 1001;
 }
