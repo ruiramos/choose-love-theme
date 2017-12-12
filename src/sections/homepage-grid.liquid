@@ -1,0 +1,1158 @@
+{%- assign collection = collections[section.settings.collection] -%}
+
+<div class="grid-product">
+  <div class="grid-product__row">
+    <div class="grid-product__column">
+      <article class="homepage-product grid-product__product">
+        <!-- search & rescue -->
+        {%- assign product = collection.products[0] -%}
+        {%- assign current_variant = product.selected_or_first_available_variant -%}
+        <a href="{{ product.url }}" data-section-type="product" itemscope itemtype="http://schema.org/Product">
+          <meta itemprop="name" content="{{ product.title }}">
+          <meta itemprop="url" content="{{ shop.url }}{{ product.url }}">
+          <meta itemprop="image" content="{{ product.featured_image | img_url: '400x' }}">
+          <meta itemprop="description" content="{{ product.description | strip_html | escape }}">
+
+          <img src="{{ product.featured_image | img_url: '400x' }}" />
+        </a>
+        <!-- Product info -->
+        <span class="grid-product__product__info">
+          <strong>{{ product.title }}</strong>
+          <span>{{ current_variant.price | money }}</span>
+        </span>
+        <!-- Add to cart form/btn -->
+        <form action="/cart/add" method="post" enctype="multipart/form-data">
+          <select name="id" class="no-js" data-product-select>
+            {% for variant in product.variants %}
+              <option
+                {% if variant == current_variant %}selected="selected"{% endif %}
+                {% unless variant.available %}disabled="disabled"{% endunless %}
+                value="{{ variant.id }}">
+                  {{ variant.title }}
+              </option>
+            {% endfor %}
+          </select>
+
+          <input type="number" id="Quantity" name="quantity" value="1" min="1" class="product-quantity-input" hidden>
+
+          <button
+            type="submit"
+            name="add"
+            class="add-to-cart-btn--icon"
+            style="background-image: url('{{ 'add-to-cart-icon.png' | asset_url }}')"
+            data-add-to-cart
+            {% unless current_variant.available %}disabled="disabled"{% endunless %}>
+              {% comment %}
+              <span data-add-to-cart-text>
+                {% if current_variant.available %}
+                  {{ 'products.product.add_to_cart' | t }}
+                {% else %}
+                  {{ 'products.product.sold_out' | t }}
+                {% endif %}
+              </span>
+              {% endcomment %}
+          </button>
+        </form>
+      </article>
+    </div>
+    <div class="grid-product__column">
+      <article class="homepage-product grid-product__product grid-product__product--half-height">
+        <!-- warm socks -->
+        {%- assign product = collection.products[1] -%}
+        {%- assign current_variant = product.selected_or_first_available_variant -%}
+        <a href="{{ product.url }}" data-section-type="product" itemscope itemtype="http://schema.org/Product">
+          <meta itemprop="name" content="{{ product.title }}">
+          <meta itemprop="url" content="{{ shop.url }}{{ product.url }}">
+          <meta itemprop="image" content="{{ product.featured_image | img_url: '400x' }}">
+          <meta itemprop="description" content="{{ product.description | strip_html | escape }}">
+
+          <img src="{{ product.featured_image | img_url: '400x' }}" />
+        </a>
+        <!-- Product info -->
+        <span class="grid-product__product__info">
+          <strong>{{ product.title }}</strong>
+          <span>{{ current_variant.price | money }}</span>
+        </span>
+
+        <!-- Add to cart form/btn -->
+        <form action="/cart/add" method="post" enctype="multipart/form-data">
+          <select name="id" class="no-js" data-product-select>
+            {% for variant in product.variants %}
+              <option
+                {% if variant == current_variant %}selected="selected"{% endif %}
+                {% unless variant.available %}disabled="disabled"{% endunless %}
+                value="{{ variant.id }}">
+                  {{ variant.title }}
+              </option>
+            {% endfor %}
+          </select>
+
+          <input type="number" id="Quantity" name="quantity" value="1" min="1" class="product-quantity-input" hidden>
+
+          <button
+            type="submit"
+            name="add"
+            class="add-to-cart-btn--icon"
+            style="background-image: url('{{ 'add-to-cart-icon.png' | asset_url }}')"
+            data-add-to-cart
+            {% unless current_variant.available %}disabled="disabled"{% endunless %}>
+              {% comment %}
+              <span data-add-to-cart-text>
+                {% if current_variant.available %}
+                  {{ 'products.product.add_to_cart' | t }}
+                {% else %}
+                  {{ 'products.product.sold_out' | t }}
+                {% endif %}
+              </span>
+              {% endcomment %}
+          </button>
+        </form>
+      </article>
+      <article class="homepage-product grid-product__product grid-product__product--half-height">
+        <!-- waterproof tent -->
+        {%- assign product = collection.products[2] -%}
+        {%- assign current_variant = product.selected_or_first_available_variant -%}
+        <a href="{{ product.url }}" data-section-type="product" itemscope itemtype="http://schema.org/Product">
+          <meta itemprop="name" content="{{ product.title }}">
+          <meta itemprop="url" content="{{ shop.url }}{{ product.url }}">
+          <meta itemprop="image" content="{{ product.featured_image | img_url: '400x' }}">
+          <meta itemprop="description" content="{{ product.description | strip_html | escape }}">
+
+          <img src="{{ product.featured_image | img_url: '400x' }}" />
+        </a>
+        <!-- Product info -->
+        <span class="grid-product__product__info">
+          <strong>{{ product.title }}</strong>
+          <span>{{ current_variant.price | money }}</span>
+        </span>
+
+        <!-- Add to cart form/btn -->
+        <form action="/cart/add" method="post" enctype="multipart/form-data">
+          <select name="id" class="no-js" data-product-select>
+            {% for variant in product.variants %}
+              <option
+                {% if variant == current_variant %}selected="selected"{% endif %}
+                {% unless variant.available %}disabled="disabled"{% endunless %}
+                value="{{ variant.id }}">
+                  {{ variant.title }}
+              </option>
+            {% endfor %}
+          </select>
+
+          <input type="number" id="Quantity" name="quantity" value="1" min="1" class="product-quantity-input" hidden>
+
+          <button
+            type="submit"
+            name="add"
+            class="add-to-cart-btn--icon"
+            style="background-image: url('{{ 'add-to-cart-icon.png' | asset_url }}')"
+            data-add-to-cart
+            {% unless current_variant.available %}disabled="disabled"{% endunless %}>
+              {% comment %}
+              <span data-add-to-cart-text>
+                {% if current_variant.available %}
+                  {{ 'products.product.add_to_cart' | t }}
+                {% else %}
+                  {{ 'products.product.sold_out' | t }}
+                {% endif %}
+              </span>
+              {% endcomment %}
+          </button>
+        </form>
+      </article>
+    </div>
+    <div class="grid-product__column grid-product__column--nowrap">
+      <article class="homepage-product grid-product__product grid-product__product--half-height">
+        <!-- blanket -->
+        {%- assign product = collection.products[3] -%}
+        {%- assign current_variant = product.selected_or_first_available_variant -%}
+        <a href="{{ product.url }}" data-section-type="product" itemscope itemtype="http://schema.org/Product">
+          <meta itemprop="name" content="{{ product.title }}">
+          <meta itemprop="url" content="{{ shop.url }}{{ product.url }}">
+          <meta itemprop="image" content="{{ product.featured_image | img_url: '400x' }}">
+          <meta itemprop="description" content="{{ product.description | strip_html | escape }}">
+
+          <img src="{{ product.featured_image | img_url: '400x' }}" />
+        </a>
+        <!-- Product info -->
+        <span class="grid-product__product__info">
+          <strong>{{ product.title }}</strong>
+          <span>{{ current_variant.price | money }}</span>
+        </span>
+        <!-- Add to cart form/btn -->
+        <form action="/cart/add" method="post" enctype="multipart/form-data">
+          <select name="id" class="no-js" data-product-select>
+            {% for variant in product.variants %}
+              <option
+                {% if variant == current_variant %}selected="selected"{% endif %}
+                {% unless variant.available %}disabled="disabled"{% endunless %}
+                value="{{ variant.id }}">
+                  {{ variant.title }}
+              </option>
+            {% endfor %}
+          </select>
+
+          <input type="number" id="Quantity" name="quantity" value="1" min="1" class="product-quantity-input" hidden>
+
+          <button
+            type="submit"
+            name="add"
+            class="add-to-cart-btn--icon"
+            style="background-image: url('{{ 'add-to-cart-icon.png' | asset_url }}')"
+            data-add-to-cart
+            {% unless current_variant.available %}disabled="disabled"{% endunless %}>
+              {% comment %}
+              <span data-add-to-cart-text>
+                {% if current_variant.available %}
+                  {{ 'products.product.add_to_cart' | t }}
+                {% else %}
+                  {{ 'products.product.sold_out' | t }}
+                {% endif %}
+              </span>
+              {% endcomment %}
+          </button>
+        </form>
+      </article>
+      <div class="grid-product__product-container">
+        <article class="homepage-product grid-product__product grid-product__product--half">
+          <!-- emergency blanket -->
+          {%- assign product = collection.products[4] -%}
+          {%- assign current_variant = product.selected_or_first_available_variant -%}
+          <a href="{{ product.url }}" data-section-type="product" itemscope itemtype="http://schema.org/Product">
+            <meta itemprop="name" content="{{ product.title }}">
+            <meta itemprop="url" content="{{ shop.url }}{{ product.url }}">
+            <meta itemprop="image" content="{{ product.featured_image | img_url: '400x' }}">
+            <meta itemprop="description" content="{{ product.description | strip_html | escape }}">
+
+            <img src="{{ product.featured_image | img_url: '400x' }}" />
+          </a>
+          <!-- Product info -->
+          <span class="grid-product__product__info">
+            <strong>{{ product.title }}</strong>
+            <span>{{ current_variant.price | money }}</span>
+          </span>
+          <!-- Add to cart form/btn -->
+          <form action="/cart/add" method="post" enctype="multipart/form-data">
+            <select name="id" class="no-js" data-product-select>
+              {% for variant in product.variants %}
+                <option
+                  {% if variant == current_variant %}selected="selected"{% endif %}
+                  {% unless variant.available %}disabled="disabled"{% endunless %}
+                  value="{{ variant.id }}">
+                    {{ variant.title }}
+                </option>
+              {% endfor %}
+            </select>
+
+            <input type="number" id="Quantity" name="quantity" value="1" min="1" class="product-quantity-input" hidden>
+
+            <button
+              type="submit"
+              name="add"
+              class="add-to-cart-btn--icon"
+              style="background-image: url('{{ 'add-to-cart-icon.png' | asset_url }}')"
+              data-add-to-cart
+              {% unless current_variant.available %}disabled="disabled"{% endunless %}>
+                {% comment %}
+                <span data-add-to-cart-text>
+                  {% if current_variant.available %}
+                    {{ 'products.product.add_to_cart' | t }}
+                  {% else %}
+                    {{ 'products.product.sold_out' | t }}
+                  {% endif %}
+                </span>
+                {% endcomment %}
+            </button>
+          </form>
+        </article>
+        <article class="homepage-product grid-product__product grid-product__product--half">
+          <!-- child's boots -->
+          {%- assign product = collection.products[5] -%}
+          {%- assign current_variant = product.selected_or_first_available_variant -%}
+          <a href="{{ product.url }}" data-section-type="product" itemscope itemtype="http://schema.org/Product">
+            <meta itemprop="name" content="{{ product.title }}">
+            <meta itemprop="url" content="{{ shop.url }}{{ product.url }}">
+            <meta itemprop="image" content="{{ product.featured_image | img_url: '400x' }}">
+            <meta itemprop="description" content="{{ product.description | strip_html | escape }}">
+
+            <img src="{{ product.featured_image | img_url: '400x' }}" />
+          </a>
+          <!-- Product info -->
+          <span class="grid-product__product__info">
+            <strong>{{ product.title }}</strong>
+            <span>{{ current_variant.price | money }}</span>
+          </span>
+          <!-- Add to cart form/btn -->
+          <form action="/cart/add" method="post" enctype="multipart/form-data">
+            <select name="id" class="no-js" data-product-select>
+              {% for variant in product.variants %}
+                <option
+                  {% if variant == current_variant %}selected="selected"{% endif %}
+                  {% unless variant.available %}disabled="disabled"{% endunless %}
+                  value="{{ variant.id }}">
+                    {{ variant.title }}
+                </option>
+              {% endfor %}
+            </select>
+
+            <input type="number" id="Quantity" name="quantity" value="1" min="1" class="product-quantity-input" hidden>
+
+            <button
+              type="submit"
+              name="add"
+              class="add-to-cart-btn--icon"
+              style="background-image: url('{{ 'add-to-cart-icon.png' | asset_url }}')"
+              data-add-to-cart
+              {% unless current_variant.available %}disabled="disabled"{% endunless %}>
+                {% comment %}
+                <span data-add-to-cart-text>
+                  {% if current_variant.available %}
+                    {{ 'products.product.add_to_cart' | t }}
+                  {% else %}
+                    {{ 'products.product.sold_out' | t }}
+                  {% endif %}
+                </span>
+                {% endcomment %}
+            </button>
+          </form>
+        </article>
+      </div>
+    </div>
+  </div>
+  <div class="grid-product__row">
+    <div class="grid-product__column">
+      <div class="grid-product__product-container">
+        <article class="homepage-product grid-product__product grid-product__product--half">
+          <!-- hot food -->
+          {%- assign product = collection.products[6] -%}
+          {%- assign current_variant = product.selected_or_first_available_variant -%}
+          <a href="{{ product.url }}" data-section-type="product" itemscope itemtype="http://schema.org/Product">
+            <meta itemprop="name" content="{{ product.title }}">
+            <meta itemprop="url" content="{{ shop.url }}{{ product.url }}">
+            <meta itemprop="image" content="{{ product.featured_image | img_url: '400x' }}">
+            <meta itemprop="description" content="{{ product.description | strip_html | escape }}">
+
+            <img src="{{ product.featured_image | img_url: '400x' }}" />
+          </a>
+          <!-- Product info -->
+          <span class="grid-product__product__info">
+            <strong>{{ product.title }}</strong>
+            <span>{{ current_variant.price | money }}</span>
+          </span>
+          <!-- Add to cart form/btn -->
+          <form action="/cart/add" method="post" enctype="multipart/form-data">
+            <select name="id" class="no-js" data-product-select>
+              {% for variant in product.variants %}
+                <option
+                  {% if variant == current_variant %}selected="selected"{% endif %}
+                  {% unless variant.available %}disabled="disabled"{% endunless %}
+                  value="{{ variant.id }}">
+                    {{ variant.title }}
+                </option>
+              {% endfor %}
+            </select>
+
+            <input type="number" id="Quantity" name="quantity" value="1" min="1" class="product-quantity-input" hidden>
+
+            <button
+              type="submit"
+              name="add"
+              class="add-to-cart-btn--icon"
+              style="background-image: url('{{ 'add-to-cart-icon.png' | asset_url }}')"
+              data-add-to-cart
+              {% unless current_variant.available %}disabled="disabled"{% endunless %}>
+                {% comment %}
+                <span data-add-to-cart-text>
+                  {% if current_variant.available %}
+                    {{ 'products.product.add_to_cart' | t }}
+                  {% else %}
+                    {{ 'products.product.sold_out' | t }}
+                  {% endif %}
+                </span>
+                {% endcomment %}
+            </button>
+          </form>
+        </article>
+        <article class="homepage-product grid-product__product grid-product__product--half">
+          <!-- phone & credit -->
+          {%- assign product = collection.products[7] -%}
+          {%- assign current_variant = product.selected_or_first_available_variant -%}
+          <a href="{{ product.url }}" data-section-type="product" itemscope itemtype="http://schema.org/Product">
+            <meta itemprop="name" content="{{ product.title }}">
+            <meta itemprop="url" content="{{ shop.url }}{{ product.url }}">
+            <meta itemprop="image" content="{{ product.featured_image | img_url: '400x' }}">
+            <meta itemprop="description" content="{{ product.description | strip_html | escape }}">
+
+            <img src="{{ product.featured_image | img_url: '400x' }}" />
+          </a>
+          <!-- Product info -->
+          <span class="grid-product__product__info">
+            <strong>{{ product.title }}</strong>
+            <span>{{ current_variant.price | money }}</span>
+          </span>
+          <!-- Add to cart form/btn -->
+          <form action="/cart/add" method="post" enctype="multipart/form-data">
+            <select name="id" class="no-js" data-product-select>
+              {% for variant in product.variants %}
+                <option
+                  {% if variant == current_variant %}selected="selected"{% endif %}
+                  {% unless variant.available %}disabled="disabled"{% endunless %}
+                  value="{{ variant.id }}">
+                    {{ variant.title }}
+                </option>
+              {% endfor %}
+            </select>
+
+            <input type="number" id="Quantity" name="quantity" value="1" min="1" class="product-quantity-input" hidden>
+
+            <button
+              type="submit"
+              name="add"
+              class="add-to-cart-btn--icon"
+              style="background-image: url('{{ 'add-to-cart-icon.png' | asset_url }}')"
+              data-add-to-cart
+              {% unless current_variant.available %}disabled="disabled"{% endunless %}>
+                {% comment %}
+                <span data-add-to-cart-text>
+                  {% if current_variant.available %}
+                    {{ 'products.product.add_to_cart' | t }}
+                  {% else %}
+                    {{ 'products.product.sold_out' | t }}
+                  {% endif %}
+                </span>
+                {% endcomment %}
+            </button>
+          </form>
+        </article>
+      </div>
+      <div class="grid-product__product-container">
+        <article class="homepage-product grid-product__product grid-product__product--half">
+          <!-- psychosocial support -->
+          {%- assign product = collection.products[8] -%}
+          {%- assign current_variant = product.selected_or_first_available_variant -%}
+          <a href="{{ product.url }}" data-section-type="product" itemscope itemtype="http://schema.org/Product">
+            <meta itemprop="name" content="{{ product.title }}">
+            <meta itemprop="url" content="{{ shop.url }}{{ product.url }}">
+            <meta itemprop="image" content="{{ product.featured_image | img_url: '400x' }}">
+            <meta itemprop="description" content="{{ product.description | strip_html | escape }}">
+
+            <img src="{{ product.featured_image | img_url: '400x' }}" />
+          </a>
+          <!-- Product info -->
+          <span class="grid-product__product__info">
+            <strong>{{ product.title }}</strong>
+            <span>{{ current_variant.price | money }}</span>
+          </span>
+          <!-- Add to cart form/btn -->
+          <form action="/cart/add" method="post" enctype="multipart/form-data">
+            <select name="id" class="no-js" data-product-select>
+              {% for variant in product.variants %}
+                <option
+                  {% if variant == current_variant %}selected="selected"{% endif %}
+                  {% unless variant.available %}disabled="disabled"{% endunless %}
+                  value="{{ variant.id }}">
+                    {{ variant.title }}
+                </option>
+              {% endfor %}
+            </select>
+
+            <input type="number" id="Quantity" name="quantity" value="1" min="1" class="product-quantity-input" hidden>
+
+            <button
+              type="submit"
+              name="add"
+              class="add-to-cart-btn--icon"
+              style="background-image: url('{{ 'add-to-cart-icon.png' | asset_url }}')"
+              data-add-to-cart
+              {% unless current_variant.available %}disabled="disabled"{% endunless %}>
+                {% comment %}
+                <span data-add-to-cart-text>
+                  {% if current_variant.available %}
+                    {{ 'products.product.add_to_cart' | t }}
+                  {% else %}
+                    {{ 'products.product.sold_out' | t }}
+                  {% endif %}
+                </span>
+                {% endcomment %}
+            </button>
+          </form>
+        </article>
+        <article class="homepage-product grid-product__product grid-product__product--half">
+          <!-- baby grow -->
+          {%- assign product = collection.products[9] -%}
+          {%- assign current_variant = product.selected_or_first_available_variant -%}
+          <a href="{{ product.url }}" data-section-type="product" itemscope itemtype="http://schema.org/Product">
+            <meta itemprop="name" content="{{ product.title }}">
+            <meta itemprop="url" content="{{ shop.url }}{{ product.url }}">
+            <meta itemprop="image" content="{{ product.featured_image | img_url: '400x' }}">
+            <meta itemprop="description" content="{{ product.description | strip_html | escape }}">
+
+            <img src="{{ product.featured_image | img_url: '400x' }}" />
+          </a>
+          <!-- Product info -->
+          <span class="grid-product__product__info">
+            <strong>{{ product.title }}</strong>
+            <span>{{ current_variant.price | money }}</span>
+          </span>
+          <!-- Add to cart form/btn -->
+          <form action="/cart/add" method="post" enctype="multipart/form-data">
+            <select name="id" class="no-js" data-product-select>
+              {% for variant in product.variants %}
+                <option
+                  {% if variant == current_variant %}selected="selected"{% endif %}
+                  {% unless variant.available %}disabled="disabled"{% endunless %}
+                  value="{{ variant.id }}">
+                    {{ variant.title }}
+                </option>
+              {% endfor %}
+            </select>
+
+            <input type="number" id="Quantity" name="quantity" value="1" min="1" class="product-quantity-input" hidden>
+
+            <button
+              type="submit"
+              name="add"
+              class="add-to-cart-btn--icon"
+              style="background-image: url('{{ 'add-to-cart-icon.png' | asset_url }}')"
+              data-add-to-cart
+              {% unless current_variant.available %}disabled="disabled"{% endunless %}>
+                {% comment %}
+                <span data-add-to-cart-text>
+                  {% if current_variant.available %}
+                    {{ 'products.product.add_to_cart' | t }}
+                  {% else %}
+                    {{ 'products.product.sold_out' | t }}
+                  {% endif %}
+                </span>
+                {% endcomment %}
+            </button>
+          </form>
+        </article>
+      </div>
+    </div>
+    <div class="grid-product__column grid-product__column--nowrap">
+      <article class="homepage-product grid-product__product grid-product__product--half-height">
+        <!-- hygiene kit -->
+        {%- assign product = collection.products[10] -%}
+        {%- assign current_variant = product.selected_or_first_available_variant -%}
+        <a href="{{ product.url }}" data-section-type="product" itemscope itemtype="http://schema.org/Product">
+          <meta itemprop="name" content="{{ product.title }}">
+          <meta itemprop="url" content="{{ shop.url }}{{ product.url }}">
+          <meta itemprop="image" content="{{ product.featured_image | img_url: '400x' }}">
+          <meta itemprop="description" content="{{ product.description | strip_html | escape }}">
+
+          <img src="{{ product.featured_image | img_url: '400x' }}" />
+        </a>
+        <!-- Product info -->
+        <span class="grid-product__product__info">
+          <strong>{{ product.title }}</strong>
+          <span>{{ current_variant.price | money }}</span>
+        </span>
+        <!-- Add to cart form/btn -->
+        <form action="/cart/add" method="post" enctype="multipart/form-data">
+          <select name="id" class="no-js" data-product-select>
+            {% for variant in product.variants %}
+              <option
+                {% if variant == current_variant %}selected="selected"{% endif %}
+                {% unless variant.available %}disabled="disabled"{% endunless %}
+                value="{{ variant.id }}">
+                  {{ variant.title }}
+              </option>
+            {% endfor %}
+          </select>
+
+          <input type="number" id="Quantity" name="quantity" value="1" min="1" class="product-quantity-input" hidden>
+
+          <button
+            type="submit"
+            name="add"
+            class="add-to-cart-btn--icon"
+            style="background-image: url('{{ 'add-to-cart-icon.png' | asset_url }}')"
+            data-add-to-cart
+            {% unless current_variant.available %}disabled="disabled"{% endunless %}>
+              {% comment %}
+              <span data-add-to-cart-text>
+                {% if current_variant.available %}
+                  {{ 'products.product.add_to_cart' | t }}
+                {% else %}
+                  {{ 'products.product.sold_out' | t }}
+                {% endif %}
+              </span>
+              {% endcomment %}
+          </button>
+        </form>
+      </article>
+      <div class="grid-product__product-container">
+        <article class="homepage-product grid-product__product grid-product__product--half">
+          <!-- dictionary -->
+          {%- assign product = collection.products[11] -%}
+          {%- assign current_variant = product.selected_or_first_available_variant -%}
+          <a href="{{ product.url }}" data-section-type="product" itemscope itemtype="http://schema.org/Product">
+            <meta itemprop="name" content="{{ product.title }}">
+            <meta itemprop="url" content="{{ shop.url }}{{ product.url }}">
+            <meta itemprop="image" content="{{ product.featured_image | img_url: '400x' }}">
+            <meta itemprop="description" content="{{ product.description | strip_html | escape }}">
+
+            <img src="{{ product.featured_image | img_url: '400x' }}" />
+          </a>
+          <!-- Product info -->
+          <span class="grid-product__product__info">
+            <strong>{{ product.title }}</strong>
+            <span>{{ current_variant.price | money }}</span>
+          </span>
+          <!-- Add to cart form/btn -->
+          <form action="/cart/add" method="post" enctype="multipart/form-data">
+            <select name="id" class="no-js" data-product-select>
+              {% for variant in product.variants %}
+                <option
+                  {% if variant == current_variant %}selected="selected"{% endif %}
+                  {% unless variant.available %}disabled="disabled"{% endunless %}
+                  value="{{ variant.id }}">
+                    {{ variant.title }}
+                </option>
+              {% endfor %}
+            </select>
+
+            <input type="number" id="Quantity" name="quantity" value="1" min="1" class="product-quantity-input" hidden>
+
+            <button
+              type="submit"
+              name="add"
+              class="add-to-cart-btn--icon"
+              style="background-image: url('{{ 'add-to-cart-icon.png' | asset_url }}')"
+              data-add-to-cart
+              {% unless current_variant.available %}disabled="disabled"{% endunless %}>
+                {% comment %}
+                <span data-add-to-cart-text>
+                  {% if current_variant.available %}
+                    {{ 'products.product.add_to_cart' | t }}
+                  {% else %}
+                    {{ 'products.product.sold_out' | t }}
+                  {% endif %}
+                </span>
+                {% endcomment %}
+            </button>
+          </form>
+        </article>
+        <article class="homepage-product grid-product__product grid-product__product--half">
+          <!-- hope hospital -->
+          {%- assign product = collection.products[12] -%}
+          {%- assign current_variant = product.selected_or_first_available_variant -%}
+          <a href="{{ product.url }}" data-section-type="product" itemscope itemtype="http://schema.org/Product">
+            <meta itemprop="name" content="{{ product.title }}">
+            <meta itemprop="url" content="{{ shop.url }}{{ product.url }}">
+            <meta itemprop="image" content="{{ product.featured_image | img_url: '400x' }}">
+            <meta itemprop="description" content="{{ product.description | strip_html | escape }}">
+
+            <img src="{{ product.featured_image | img_url: '400x' }}" />
+          </a>
+          <!-- Product info -->
+          <span class="grid-product__product__info">
+            <strong>{{ product.title }}</strong>
+            <span>{{ current_variant.price | money }}</span>
+          </span>
+          <!-- Add to cart form/btn -->
+          <form action="/cart/add" method="post" enctype="multipart/form-data">
+            <select name="id" class="no-js" data-product-select>
+              {% for variant in product.variants %}
+                <option
+                  {% if variant == current_variant %}selected="selected"{% endif %}
+                  {% unless variant.available %}disabled="disabled"{% endunless %}
+                  value="{{ variant.id }}">
+                    {{ variant.title }}
+                </option>
+              {% endfor %}
+            </select>
+
+            <input type="number" id="Quantity" name="quantity" value="1" min="1" class="product-quantity-input" hidden>
+
+            <button
+              type="submit"
+              name="add"
+              class="add-to-cart-btn--icon"
+              style="background-image: url('{{ 'add-to-cart-icon.png' | asset_url }}')"
+              data-add-to-cart
+              {% unless current_variant.available %}disabled="disabled"{% endunless %}>
+                {% comment %}
+                <span data-add-to-cart-text>
+                  {% if current_variant.available %}
+                    {{ 'products.product.add_to_cart' | t }}
+                  {% else %}
+                    {{ 'products.product.sold_out' | t }}
+                  {% endif %}
+                </span>
+                {% endcomment %}
+            </button>
+          </form>
+        </article>
+      </div>
+    </div>
+    <div class="grid-product__column">
+      <article class="homepage-product grid-product__product">
+        <!-- child's coat -->
+        {%- assign product = collection.products[13] -%}
+        {%- assign current_variant = product.selected_or_first_available_variant -%}
+        <a href="{{ product.url }}" data-section-type="product" itemscope itemtype="http://schema.org/Product">
+          <meta itemprop="name" content="{{ product.title }}">
+          <meta itemprop="url" content="{{ shop.url }}{{ product.url }}">
+          <meta itemprop="image" content="{{ product.featured_image | img_url: '400x' }}">
+          <meta itemprop="description" content="{{ product.description | strip_html | escape }}">
+
+          <img src="{{ product.featured_image | img_url: '400x' }}" />
+        </a>
+        <!-- Product info -->
+        <span class="grid-product__product__info">
+          <strong>{{ product.title }}</strong>
+          <span>{{ current_variant.price | money }}</span>
+        </span>
+        <!-- Add to cart form/btn -->
+        <form action="/cart/add" method="post" enctype="multipart/form-data">
+          <select name="id" class="no-js" data-product-select>
+            {% for variant in product.variants %}
+              <option
+                {% if variant == current_variant %}selected="selected"{% endif %}
+                {% unless variant.available %}disabled="disabled"{% endunless %}
+                value="{{ variant.id }}">
+                  {{ variant.title }}
+              </option>
+            {% endfor %}
+          </select>
+
+          <input type="number" id="Quantity" name="quantity" value="1" min="1" class="product-quantity-input" hidden>
+
+          <button
+            type="submit"
+            name="add"
+            class="add-to-cart-btn--icon"
+            style="background-image: url('{{ 'add-to-cart-icon.png' | asset_url }}')"
+            data-add-to-cart
+            {% unless current_variant.available %}disabled="disabled"{% endunless %}>
+              {% comment %}
+              <span data-add-to-cart-text>
+                {% if current_variant.available %}
+                  {{ 'products.product.add_to_cart' | t }}
+                {% else %}
+                  {{ 'products.product.sold_out' | t }}
+                {% endif %}
+              </span>
+              {% endcomment %}
+          </button>
+        </form>
+      </article>
+    </div>
+  </div>
+  <div class="grid-product__row">
+    <div class="grid-product__column">
+      <!-- cooking pans -->
+      <article class="homepage-product grid-product__product">
+        {%- assign product = collection.products[14] -%}
+        {%- assign current_variant = product.selected_or_first_available_variant -%}
+        <a href="{{ product.url }}" data-section-type="product" itemscope itemtype="http://schema.org/Product">
+          <meta itemprop="name" content="{{ product.title }}">
+          <meta itemprop="url" content="{{ shop.url }}{{ product.url }}">
+          <meta itemprop="image" content="{{ product.featured_image | img_url: '400x' }}">
+          <meta itemprop="description" content="{{ product.description | strip_html | escape }}">
+
+          <img src="{{ product.featured_image | img_url: '400x' }}" />
+        </a>
+        <!-- Product info -->
+        <span class="grid-product__product__info">
+          <strong>{{ product.title }}</strong>
+          <span>{{ current_variant.price | money }}</span>
+        </span>
+        <!-- Add to cart form/btn -->
+        <form action="/cart/add" method="post" enctype="multipart/form-data">
+          <select name="id" class="no-js" data-product-select>
+            {% for variant in product.variants %}
+              <option
+                {% if variant == current_variant %}selected="selected"{% endif %}
+                {% unless variant.available %}disabled="disabled"{% endunless %}
+                value="{{ variant.id }}">
+                  {{ variant.title }}
+              </option>
+            {% endfor %}
+          </select>
+
+          <input type="number" id="Quantity" name="quantity" value="1" min="1" class="product-quantity-input" hidden>
+
+          <button
+            type="submit"
+            name="add"
+            class="add-to-cart-btn--icon"
+            style="background-image: url('{{ 'add-to-cart-icon.png' | asset_url }}')"
+            data-add-to-cart
+            {% unless current_variant.available %}disabled="disabled"{% endunless %}>
+              {% comment %}
+              <span data-add-to-cart-text>
+                {% if current_variant.available %}
+                  {{ 'products.product.add_to_cart' | t }}
+                {% else %}
+                  {{ 'products.product.sold_out' | t }}
+                {% endif %}
+              </span>
+              {% endcomment %}
+          </button>
+        </form>
+      </article>
+    </div>
+    <div class="grid-product__column">
+      <article class="homepage-product grid-product__product grid-product__product--half-height">
+        <!-- school bag -->
+        {%- assign product = collection.products[15] -%}
+        {%- assign current_variant = product.selected_or_first_available_variant -%}
+        <a href="{{ product.url }}" data-section-type="product" itemscope itemtype="http://schema.org/Product">
+          <meta itemprop="name" content="{{ product.title }}">
+          <meta itemprop="url" content="{{ shop.url }}{{ product.url }}">
+          <meta itemprop="image" content="{{ product.featured_image | img_url: '400x' }}">
+          <meta itemprop="description" content="{{ product.description | strip_html | escape }}">
+
+          <img src="{{ product.featured_image | img_url: '400x' }}" />
+        </a>
+        <!-- Product info -->
+        <span class="grid-product__product__info">
+          <strong>{{ product.title }}</strong>
+          <span>{{ current_variant.price | money }}</span>
+        </span>
+        <!-- Add to cart form/btn -->
+        <form action="/cart/add" method="post" enctype="multipart/form-data">
+          <select name="id" class="no-js" data-product-select>
+            {% for variant in product.variants %}
+              <option
+                {% if variant == current_variant %}selected="selected"{% endif %}
+                {% unless variant.available %}disabled="disabled"{% endunless %}
+                value="{{ variant.id }}">
+                  {{ variant.title }}
+              </option>
+            {% endfor %}
+          </select>
+
+          <input type="number" id="Quantity" name="quantity" value="1" min="1" class="product-quantity-input" hidden>
+
+          <button
+            type="submit"
+            name="add"
+            class="add-to-cart-btn--icon"
+            style="background-image: url('{{ 'add-to-cart-icon.png' | asset_url }}')"
+            data-add-to-cart
+            {% unless current_variant.available %}disabled="disabled"{% endunless %}>
+              {% comment %}
+              <span data-add-to-cart-text>
+                {% if current_variant.available %}
+                  {{ 'products.product.add_to_cart' | t }}
+                {% else %}
+                  {{ 'products.product.sold_out' | t }}
+                {% endif %}
+              </span>
+              {% endcomment %}
+          </button>
+        </form>
+      </article>
+      <article class="homepage-product grid-product__product grid-product__product--half-height">
+        <!-- sleeping bag -->
+        {%- assign product = collection.products[16] -%}
+        {%- assign current_variant = product.selected_or_first_available_variant -%}
+        <a href="{{ product.url }}" data-section-type="product" itemscope itemtype="http://schema.org/Product">
+          <meta itemprop="name" content="{{ product.title }}">
+          <meta itemprop="url" content="{{ shop.url }}{{ product.url }}">
+          <meta itemprop="image" content="{{ product.featured_image | img_url: '400x' }}">
+          <meta itemprop="description" content="{{ product.description | strip_html | escape }}">
+
+          <img src="{{ product.featured_image | img_url: '400x' }}" />
+        </a>
+        <!-- Product info -->
+        <span class="grid-product__product__info">
+          <strong>{{ product.title }}</strong>
+          <span>{{ current_variant.price | money }}</span>
+        </span>
+        <!-- Add to cart form/btn -->
+        <form action="/cart/add" method="post" enctype="multipart/form-data">
+          <select name="id" class="no-js" data-product-select>
+            {% for variant in product.variants %}
+              <option
+                {% if variant == current_variant %}selected="selected"{% endif %}
+                {% unless variant.available %}disabled="disabled"{% endunless %}
+                value="{{ variant.id }}">
+                  {{ variant.title }}
+              </option>
+            {% endfor %}
+          </select>
+
+          <input type="number" id="Quantity" name="quantity" value="1" min="1" class="product-quantity-input" hidden>
+
+          <button
+            type="submit"
+            name="add"
+            class="add-to-cart-btn--icon"
+            style="background-image: url('{{ 'add-to-cart-icon.png' | asset_url }}')"
+            data-add-to-cart
+            {% unless current_variant.available %}disabled="disabled"{% endunless %}>
+              {% comment %}
+              <span data-add-to-cart-text>
+                {% if current_variant.available %}
+                  {{ 'products.product.add_to_cart' | t }}
+                {% else %}
+                  {{ 'products.product.sold_out' | t }}
+                {% endif %}
+              </span>
+              {% endcomment %}
+          </button>
+        </form>
+      </article>
+    </div>
+    <div class="grid-product__column">
+      <div class="grid-product__product-container">
+        <article class="homepage-product grid-product__product grid-product__product--half">
+          <!-- family accomodation -->
+          {%- assign product = collection.products[17] -%}
+          {%- assign current_variant = product.selected_or_first_available_variant -%}
+          <a href="{{ product.url }}" data-section-type="product" itemscope itemtype="http://schema.org/Product">
+            <meta itemprop="name" content="{{ product.title }}">
+            <meta itemprop="url" content="{{ shop.url }}{{ product.url }}">
+            <meta itemprop="image" content="{{ product.featured_image | img_url: '400x' }}">
+            <meta itemprop="description" content="{{ product.description | strip_html | escape }}">
+
+            <img src="{{ product.featured_image | img_url: '400x' }}" />
+          </a>
+          <!-- Product info -->
+          <span class="grid-product__product__info">
+            <strong>{{ product.title }}</strong>
+            <span>{{ current_variant.price | money }}</span>
+          </span>
+          <!-- Add to cart form/btn -->
+          <form action="/cart/add" method="post" enctype="multipart/form-data">
+            <select name="id" class="no-js" data-product-select>
+              {% for variant in product.variants %}
+                <option
+                  {% if variant == current_variant %}selected="selected"{% endif %}
+                  {% unless variant.available %}disabled="disabled"{% endunless %}
+                  value="{{ variant.id }}">
+                    {{ variant.title }}
+                </option>
+              {% endfor %}
+            </select>
+
+            <input type="number" id="Quantity" name="quantity" value="1" min="1" class="product-quantity-input" hidden>
+
+            <button
+              type="submit"
+              name="add"
+              class="add-to-cart-btn--icon"
+              style="background-image: url('{{ 'add-to-cart-icon.png' | asset_url }}')"
+              data-add-to-cart
+              {% unless current_variant.available %}disabled="disabled"{% endunless %}>
+                {% comment %}
+                <span data-add-to-cart-text>
+                  {% if current_variant.available %}
+                    {{ 'products.product.add_to_cart' | t }}
+                  {% else %}
+                    {{ 'products.product.sold_out' | t }}
+                  {% endif %}
+                </span>
+                {% endcomment %}
+            </button>
+          </form>
+        </article>
+        <article class="homepage-product grid-product__product grid-product__product--half">
+          <!-- meal ingredients -->
+          {%- assign product = collection.products[18] -%}
+          {%- assign current_variant = product.selected_or_first_available_variant -%}
+          <a href="{{ product.url }}" data-section-type="product" itemscope itemtype="http://schema.org/Product">
+            <meta itemprop="name" content="{{ product.title }}">
+            <meta itemprop="url" content="{{ shop.url }}{{ product.url }}">
+            <meta itemprop="image" content="{{ product.featured_image | img_url: '400x' }}">
+            <meta itemprop="description" content="{{ product.description | strip_html | escape }}">
+
+            <img src="{{ product.featured_image | img_url: '400x' }}" />
+          </a>
+          <!-- Product info -->
+          <span class="grid-product__product__info">
+            <strong>{{ product.title }}</strong>
+            <span>{{ current_variant.price | money }}</span>
+          </span>
+          <!-- Add to cart form/btn -->
+          <form action="/cart/add" method="post" enctype="multipart/form-data">
+            <select name="id" class="no-js" data-product-select>
+              {% for variant in product.variants %}
+                <option
+                  {% if variant == current_variant %}selected="selected"{% endif %}
+                  {% unless variant.available %}disabled="disabled"{% endunless %}
+                  value="{{ variant.id }}">
+                    {{ variant.title }}
+                </option>
+              {% endfor %}
+            </select>
+
+            <input type="number" id="Quantity" name="quantity" value="1" min="1" class="product-quantity-input" hidden>
+
+            <button
+              type="submit"
+              name="add"
+              class="add-to-cart-btn--icon"
+              style="background-image: url('{{ 'add-to-cart-icon.png' | asset_url }}')"
+              data-add-to-cart
+              {% unless current_variant.available %}disabled="disabled"{% endunless %}>
+                {% comment %}
+                <span data-add-to-cart-text>
+                  {% if current_variant.available %}
+                    {{ 'products.product.add_to_cart' | t }}
+                  {% else %}
+                    {{ 'products.product.sold_out' | t }}
+                  {% endif %}
+                </span>
+                {% endcomment %}
+            </button>
+          </form>
+        </article>
+      </div>
+      <div class="grid-product__product-container">
+        <article class="homepage-product grid-product__product grid-product__product--half">
+          <!-- nappies -->
+          {%- assign product = collection.products[19] -%}
+          {%- assign current_variant = product.selected_or_first_available_variant -%}
+          <a href="{{ product.url }}" data-section-type="product" itemscope itemtype="http://schema.org/Product">
+            <meta itemprop="name" content="{{ product.title }}">
+            <meta itemprop="url" content="{{ shop.url }}{{ product.url }}">
+            <meta itemprop="image" content="{{ product.featured_image | img_url: '400x' }}">
+            <meta itemprop="description" content="{{ product.description | strip_html | escape }}">
+
+            <img src="{{ product.featured_image | img_url: '400x' }}" />
+          </a>
+          <!-- Product info -->
+          <span class="grid-product__product__info">
+            <strong>{{ product.title }}</strong>
+            <span>{{ current_variant.price | money }}</span>
+          </span>
+          <!-- Add to cart form/btn -->
+          <form action="/cart/add" method="post" enctype="multipart/form-data">
+            <select name="id" class="no-js" data-product-select>
+              {% for variant in product.variants %}
+                <option
+                  {% if variant == current_variant %}selected="selected"{% endif %}
+                  {% unless variant.available %}disabled="disabled"{% endunless %}
+                  value="{{ variant.id }}">
+                    {{ variant.title }}
+                </option>
+              {% endfor %}
+            </select>
+
+            <input type="number" id="Quantity" name="quantity" value="1" min="1" class="product-quantity-input" hidden>
+
+            <button
+              type="submit"
+              name="add"
+              class="add-to-cart-btn--icon"
+              style="background-image: url('{{ 'add-to-cart-icon.png' | asset_url }}')"
+              data-add-to-cart
+              {% unless current_variant.available %}disabled="disabled"{% endunless %}>
+                {% comment %}
+                <span data-add-to-cart-text>
+                  {% if current_variant.available %}
+                    {{ 'products.product.add_to_cart' | t }}
+                  {% else %}
+                    {{ 'products.product.sold_out' | t }}
+                  {% endif %}
+                </span>
+                {% endcomment %}
+            </button>
+          </form>
+        </article>
+        <article class="homepage-product grid-product__product grid-product__product--half">
+          <!-- medical kit -->
+          {%- assign product = collection.products[20] -%}
+          {%- assign current_variant = product.selected_or_first_available_variant -%}
+          <a href="{{ product.url }}" data-section-type="product" itemscope itemtype="http://schema.org/Product">
+            <meta itemprop="name" content="{{ product.title }}">
+            <meta itemprop="url" content="{{ shop.url }}{{ product.url }}">
+            <meta itemprop="image" content="{{ product.featured_image | img_url: '400x' }}">
+            <meta itemprop="description" content="{{ product.description | strip_html | escape }}">
+
+            <img src="{{ product.featured_image | img_url: '400x' }}" />
+          </a>
+          <!-- Product info -->
+          <span class="grid-product__product__info">
+            <strong>{{ product.title }}</strong>
+            <span>{{ current_variant.price | money }}</span>
+          </span>
+          <!-- Add to cart form/btn -->
+          <form action="/cart/add" method="post" enctype="multipart/form-data">
+            <select name="id" class="no-js" data-product-select>
+              {% for variant in product.variants %}
+                <option
+                  {% if variant == current_variant %}selected="selected"{% endif %}
+                  {% unless variant.available %}disabled="disabled"{% endunless %}
+                  value="{{ variant.id }}">
+                    {{ variant.title }}
+                </option>
+              {% endfor %}
+            </select>
+
+            <input type="number" id="Quantity" name="quantity" value="1" min="1" class="product-quantity-input" hidden>
+
+            <button
+              type="submit"
+              name="add"
+              class="add-to-cart-btn--icon"
+              style="background-image: url('{{ 'add-to-cart-icon.png' | asset_url }}')"
+              data-add-to-cart
+              {% unless current_variant.available %}disabled="disabled"{% endunless %}>
+                {% comment %}
+                <span data-add-to-cart-text>
+                  {% if current_variant.available %}
+                    {{ 'products.product.add_to_cart' | t }}
+                  {% else %}
+                    {{ 'products.product.sold_out' | t }}
+                  {% endif %}
+                </span>
+                {% endcomment %}
+            </button>
+          </form>
+        </article>
+      </div>
+    </div>
+  </div>
+  <div class="grid-product__row">
+    <article class="homepage-product grid-product__product grid-product__product--big">
+      {%- assign product = collection.products[21] -%}
+      {%- assign current_variant = product.selected_or_first_available_variant -%}
+      <a href="{{ product.url }}" data-section-type="product" itemscope itemtype="http://schema.org/Product">
+        <meta itemprop="name" content="{{ product.title }}">
+        <meta itemprop="url" content="{{ shop.url }}{{ product.url }}">
+        <meta itemprop="image" content="{{ product.featured_image | img_url: '2000x' }}">
+        <meta itemprop="description" content="{{ product.description | strip_html | escape }}">
+
+        <img src="{{ product.featured_image | img_url: '2000x' }}" />
+
+        <span class="grid-product__product__info">
+          <strong>{{ product.title }}</strong>
+          <span>{{ current_variant.price | money }}</span>
+          <p>
+            Absolutely everything in the Choose Love store. This includes a month's rent and food for a family, tents, books, children's jackets and everything else you see. A truly generous gift.
+          </p>
+          <button class="btn add-to-cart-btn btn-huge btn-submit">
+            Learn more
+          </button>
+        </span>
+      </a>
+    </article>
+  </div>
+</div>
+
+{% schema %}
+  {
+    "name": "homepage-grid",
+    "settings": [
+      {
+        "id": "collection",
+        "type": "collection",
+        "label": "Collection"
+      }
+    ],
+    "presets": [
+      {
+        "name": "homepage-grid",
+        "category": "Collection"
+      }
+    ]
+  }
+
+{% endschema %}

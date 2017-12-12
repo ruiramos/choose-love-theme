@@ -1,0 +1,31 @@
+.ajaxified-cart-feedback {
+  display: block;
+  line-height: 36px;
+  font-size: 90%;
+  vertical-align: middle;
+
+  .homepage-product & {
+    margin: 0;
+    padding: 10px;
+    background-color: white;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 9;
+  }
+
+  &.success {
+    color: #3D9970;
+  }
+
+  &.error {
+    color: #FF4136;
+  }
+
+  .btn {
+    padding: 5px 40px;
+  }
+}
+
+
