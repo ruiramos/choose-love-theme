@@ -64,7 +64,8 @@ $(document).ready(function() {
   window.sr = ScrollReveal({
     scale: 1,
     duration: 750,
-    viewOffset: { top: 50, right: 0, bottom: 0, left: 0 }
+    viewOffset: { top: 50, right: 0, bottom: 0, left: 0 },
+    opacity: 0
   });
 
   sr.reveal('.homepage-product');

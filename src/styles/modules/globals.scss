@@ -157,10 +157,16 @@ body.remove-overflow {
   a {
     color: white;
     text-decoration: none;
+
+    &:hover {
+      color: $color-golden;
+    }
   }
 
-  a:hover {
-    color: $color-golden;
+  @media(max-width: $grid-medium) {
+    a:active {
+      color: $color-golden;
+    }
   }
 
 }

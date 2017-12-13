@@ -33,10 +33,13 @@
       </div>
     {% endif %}
 
-    <a class="cart-link" href="/cart">
+    <a class="cart-link small--hide" href="/cart">
       {{ 'layout.cart.title' | t }}:
-      <span id="CartPrice" class="small--hide">{{ cart.total_price | money}}</span>
+      <span id="CartPrice">{{ cart.total_price | money}}</span>
       <span id="CartCount">({{ cart.item_count }} {{ 'layout.cart.items_count' | t: count: cart.item_count }})</span>
+    </a>
+    <a class="cart-link medium-up--hide" href="/cart">
+      <span id="CartCount">{{ 'layout.cart.title' | t }} ({{ cart.item_count }})</span>
     </a>
 
     {% if shop.customer_accounts_enabled %}

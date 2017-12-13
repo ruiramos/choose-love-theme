@@ -8,11 +8,20 @@
     margin: 0;
     padding: 10px;
     background-color: white;
+    line-height: 1.2;
     position: absolute;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
     z-index: 9;
+
+    &.success {
+      color: black;
+
+      i {
+        color: #3D9970;
+      }
+    }
   }
 
   &.success {

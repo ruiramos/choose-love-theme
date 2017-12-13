@@ -30,6 +30,7 @@
     flex-direction: row;
     justify-content: center;
     align-items: center;
+
     @media (max-width: $grid-medium){
       width: 90%;
       flex-direction: column;
@@ -41,6 +42,7 @@
     width: 100%;
     max-width: 300px;
     margin: 0 auto;
+
     @media (max-width: $grid-medium){
       width: 160px;
       margin: 0;
@@ -49,15 +51,26 @@
 
   .homepage-header-left,
   .homepage-header-right {
-    flex: 1 1 50%;
+    flex: 0 1 50%;
+
     @media (max-width: $grid-medium){
       flex: 1 1 100%;
     }
   }
 
+  .homepage-header-left {
+    flex: 0 1 auto;
+    padding-right: 25px;
+
+    @media (max-width: $grid-medium){
+      padding-right: 0;
+    }
+  }
+
   .homepage-header-right {
-    max-width: 500px;
+    max-width: 375px;
     text-align: left;
+
     @media (max-width: $grid-medium){
       text-align: center;
     }
