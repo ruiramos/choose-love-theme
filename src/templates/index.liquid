@@ -15,7 +15,10 @@
   </div>
   <div class="vodafone-cta" style="background-image: url('{{ 'footer.jpg' | asset_url}}')">
     <div class="vodafone-cta__container">
-      <img src="{{ 'vodafone-logo.png' | asset_url}}"class="vodafone-cta__logo">
+      {% comment %}
+      <img src="{{ 'vodafone-logo.png' | asset_url}}" class="vodafone-cta__logo">
+      {% endcomment %}
+      <img src="//cdn.shopify.com/s/files/1/2496/1730/t/2/assets/vodafone-logo.png" class="vodafone-cta__logo">
       <p class="vodafone-cta__copy">This week the Vodafone Foundation is matching every donation at the Choose Love store. This means your purchase will make <strong>double the difference</strong>.</p>
       <a href="https://choose.love/pages/faq" class="vodafone-cta__link">Learn more</a>
     </div>
