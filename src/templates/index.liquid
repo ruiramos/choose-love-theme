@@ -1,5 +1,5 @@
 <div class="homepage-container">
-  <div class="homepage-header" style="background-image: url('{{ 'homepage-welcome4.jpg' | asset_url }}')">
+  <div class="homepage-header" style="background-image: url('{{ 'hero_image.jpg' | asset_url }}')">
     <div class="homepage-header-container">
       <div class="homepage-header-left scroll-reveal">
         <img src="{{ "chooselove-white.png" | asset_url }}" class="homepage-header-container-logo" />
@@ -7,28 +7,39 @@
       <div class="homepage-header-right scroll-reveal">
         <h1>{{ 'general.tagline' | t }}</h1>
         <h3>Every single purchase you make goes towards a similar item for a refugee, delivered via one of the 80+ projects Help Refugees work with across the world.</h3>
+        {% comment %}
         <div><a class="btn btn-white" href="#products" data-hook="store-animated-scroll">Shop now</a></div>
+        {% endcomment %}
       </div>
     </div>
   </div>
-  {% comment %}
-  <div class="homepage-counter">
-    <a href="#products" data-hook="store-animated-scroll"><h1>
-      Shop now
-      <svg style="width:24px;height:24px" viewBox="0 0 24 24">
-        <path fill="#ffffff" d="M7.41,8.58L12,13.17L16.59,8.58L18,10L12,16L6,10L7.41,8.58Z" />
-      </svg>
-    </h1></a>
+  <div class="vodafone-cta" style="background-image: url('{{ 'footer.jpg' | asset_url}}')">
+    <div class="vodafone-cta__container">
+      {% comment %}
+      <img src="{{ 'vodafone-logo.png' | asset_url}}" class="vodafone-cta__logo">
+      {% endcomment %}
+      <img src="//cdn.shopify.com/s/files/1/2496/1730/t/2/assets/vodafone-logo.png" class="vodafone-cta__logo">
+      <p class="vodafone-cta__copy">This week the Vodafone Foundation is matching every donation at the Choose Love store. This means your purchase will make <strong>double the difference</strong>.</p>
+      <a href="https://choose.love/pages/faq" class="vodafone-cta__link">Learn more</a>
+    </div>
+    {% comment %}
+    <a href="#products" data-hook="store-animated-scroll">
+      <h1>
+        <svg style="width:24px;height:24px" viewBox="0 0 24 24">
+          <path fill="#ffffff" d="M7.41,8.58L12,13.17L16.59,8.58L18,10L12,16L6,10L7.41,8.58Z" />
+        </svg>
+      </h1>
+    </a>
     <!--  <h3>34,343 have chosen love so far</h3> -->
+    {% endcomment %}
   </div>
-  {% endcomment %}
-  <div id="products" class="homepage-product-grid" style="background-image: url('{{ 'concrete-dark.jpg' | asset_url }}')">
+  <div id="products" class="homepage-product-grid">
     {{ content_for_index }}
   </div>
-  <div class="homepage-buy-store">
+  <!-- <div class="homepage-buy-store">
     <h3>
       <a href="/products/buy-the-store" data-hook="buy-store">Buy the store</a>
     </h3>
-  </div>
+  </div> -->
 </div>
 

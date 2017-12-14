@@ -35,11 +35,11 @@
 
     <a class="cart-link small--hide" href="/cart">
       {{ 'layout.cart.title' | t }}:
-      {{ cart.total_price | money}}
-      ({{ cart.item_count }} {{ 'layout.cart.items_count' | t: count: cart.item_count }})
+      <span id="CartPrice">{{ cart.total_price | money}}</span>
+      <span id="CartCount">({{ cart.item_count }} {{ 'layout.cart.items_count' | t: count: cart.item_count }})</span>
     </a>
     <a class="cart-link medium-up--hide" href="/cart">
-      {{ 'layout.cart.title' | t }} ({{ cart.item_count }})
+      <span id="CartCount">{{ 'layout.cart.title' | t }} ({{ cart.item_count }})</span>
     </a>
 
     {% if shop.customer_accounts_enabled %}
