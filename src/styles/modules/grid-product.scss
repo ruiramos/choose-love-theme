@@ -133,6 +133,7 @@ $default-spacing: 10px;
 .grid-product__product--half {
   flex: 1 0 calc(50% - #{$default-spacing});
   max-width: calc(50% - #{$default-spacing});
+  width: 100%;
   height: calc(100% - #{$default-spacing});
 
   > a {
