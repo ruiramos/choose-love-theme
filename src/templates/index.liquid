@@ -13,13 +13,13 @@
       </div>
     </div>
   </div>
+  {% comment %}
   <div class="vodafone-cta" style="background-image: url('{{ 'footer.jpg' | asset_url}}')">
     <div class="vodafone-cta__container">
       <img src="{{ 'vodafone-logo.png' | asset_url}}" class="vodafone-cta__logo">
       <p class="vodafone-cta__copy">This week the Vodafone Foundation is matching every donation at the Choose Love store. This means your purchase will make <strong>double the difference</strong>.</p>
       <a href="https://choose.love/pages/faq" class="vodafone-cta__link">Learn more</a>
     </div>
-    {% comment %}
     <a href="#products" data-hook="store-animated-scroll">
       <h1>
         <svg style="width:24px;height:24px" viewBox="0 0 24 24">
@@ -28,8 +28,8 @@
       </h1>
     </a>
     <!--  <h3>34,343 have chosen love so far</h3> -->
-    {% endcomment %}
   </div>
+  {% endcomment %}
   <div id="products" class="homepage-product-grid">
     {{ content_for_index }}
   </div>
