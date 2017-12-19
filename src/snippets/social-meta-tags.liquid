@@ -39,7 +39,7 @@
 <meta property="og:type" content="{{ og_type }}">
 <meta property="og:description" content="{{ og_description }}">
 {%- if template.name == 'index' -%}
-  <meta property="og:image" content="http:{{ "chooselove-homepage9.jpg" |  asset_url }}">
+  <meta property="og:image" content="http:{{ "chooselove-homepage-preview.jpg" |  asset_url }}">
 {%- endif -%}
 {%- if template.name == 'product' -%}
   <meta property="og:price:amount" content="{{ product.price | money_without_currency | strip_html }}">
